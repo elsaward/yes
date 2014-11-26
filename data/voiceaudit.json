@@ -1,0 +1,8 @@
+{
+    "InfoList":[
+        {"Amount":3,"NotifyInfo":"有【3】个语音文件待审核！","Link":"homenotice.html"},
+        {"Amount":1,"NotifyInfo":"有【1】个语音号码待审核！","Link":"homenotice.html"}],
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

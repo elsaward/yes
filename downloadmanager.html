@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>下载管理</title>
+    <link type="text/css" rel="stylesheet" href="content/css/main.css">
+</head>
+<body>
+<div id="main" class="gs-main-contain" jsw-index="0">
+    <h2>
+    </h2>
+    <hr>
+</div>
+<script src="scripts/require.js"></script>
+<script>
+    require.config({
+        baseUrl: 'scripts/lib',
+        shim: {
+            'form': ['jquery']
+        }
+    });
+
+    require(['jquery', 'common', 'gridview'], function ($, common, gridview) {
+
+        /* gridOption = {
+         pageTitle: ""//页面标题
+         topMenu: //菜单链接 数组（可选）
+         {
+         "text": "",//链接文字
+         "href": ""//链接路径或js动作
+         }
+         titles: //表头 数组
+         {
+         "FieldName": "",//字段名称
+         "FieldCode": ""//字段Code
+         }
+         params: 查询/导出参数 数组（可选）
+         //特殊类
+         {
+         module: //类别（userCode（用户选择）/times（时间选择）
+         url: //用户选择URL
+         }
+         //一般类
+         {
+         "showName": 显示项文字
+         "name": name属性和id属性的值
+         "value": 下拉框选项 数组
+         //值与显示文字相同
+         [value1, value2]
+         //值与显示文字不同
+         [{"val": value1, "text": text1}, {"val": value2, "text": text2}]
+         }
+         exportURL: 导出功能URL（可选）
+         searchURL: 查询功能URL
+         deleteURL: 删除功能URL（可选）
+         } */
+
+        var titles = [];
+        var topMenu = [];
+        var params = [];
+        var values =[];
+        titles.push({FieldName: "", FieldCode: "TaskID"});
+        titles.push({FieldName: "任务创建", FieldCode: "TaskBuilder"});
+        titles.push({FieldName: "任务名称", FieldCode: "TaskTitle"});
+        titles.push({FieldName: "任务状态", FieldCode: "StatusText"});
+        titles.push({FieldName: "创建时间", FieldCode: "Created"});
+        titles.push({FieldName: "下载文件", FieldCode: "FileName"});
+        values.push({val: "-10", text: "请选择"});
+        values.push({val: "1", text: "已完成"});
+        values.push({val: "0", text: "未完成"});
+        values.push({val: "-1", text: "已过期"});
+        values.push({val: "-2", text: "处理失败"});
+        params.push({module: "", url: "", showName: "任务状态", name: "status", value: values});
+        params.push({module: "times", url: "", showName: "", name: "", value: values});
+        var gridOption = {
+            pageTitle: "下载管理",
+            topMenu: topMenu,
+            titles: titles,
+            params: params,
+            exportURL: "",
+            searchURL: "data/download.json",
+            deleteURL: "data/simpletrue.json"
+        };
+        var pageOption = {};
+        var pageData = {};
+        var i, len;
+        var param = gridOption["params"],
+                searchURL = gridOption["searchURL"];
+        $("h2").text(gridOption["pageTitle"]);
+        if (searchURL) {
+            pageOption["url"] = searchURL;
+        }
+        if (searchURL && param && param instanceof Array) {
+            for (i = 0, len = param.length; i < len; i++) {
+                if (param[i]["module"] == "userCode") {
+                    pageData["userCode"] = common.getUrlParameter("userCode");
+                    pageData["hidUserId"] = common.getUrlParameter("hidUserId");
+                } else if (param[i]["module"] == "times") {
+                    pageData["StartT"] = common.getUrlParameter("StartT");
+                    pageData["EndT"] = common.getUrlParameter("EndT");
+                }
+                pageData[param[i]["name"]] = common.getUrlParameter(param[i]["name"]);
+            }
+            if (param.length) {
+                pageOption["data"] = pageData;
+            }
+        }
+        gridOption["pageOption"] = pageOption;
+        gridview(gridOption);
+    });
+</script>
+</body>
+</html>

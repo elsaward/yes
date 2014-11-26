@@ -1,0 +1,24 @@
+{
+    "Result":{
+        "Pattern":{
+            "Id":1833,
+            "UserCode":"admin",
+            "PipeID":87,
+            "PipeName":"10690240应用",
+            "pattern":"\\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\\Z",
+            "PatternDisFilter":null,
+            "userExt":"920140",
+            "userExtLT":"920140",
+            "userExtDX":"920140",
+            "isForceSubAccount":1,
+            "isForceSubAccountString":"有效"
+        },
+        "User":{
+            "id":1240,
+            "UserName":"中青旅",
+            "UserCode":"中青旅"
+        }
+    },
+    "Code":10,
+    "Description":"请求成功"
+}

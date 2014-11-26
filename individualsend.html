@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>个性化发送</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="content/css/main.css">
+    <link type="text/css" rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div id="main" class="gs-main-contain" jsw-index="0">
+    <div class="gs-tool-bar">
+        <h2 class="gs-left">个性化发送</h2>
+        <ul id="selSendType" class="gs-switcher gs-left gs-margin-left-20" data-switcher="{connect:'#selectPattern'}">
+            <li><a href="#">在线发送</a></li>
+            <li><a href="#">文件发送</a></li>
+        </ul>
+    </div>
+    <hr>
+    <form id="sendSmsForm" class="gs-form gs-margin-top-10" method="post">
+    <ul class="gs-switcher-item gs-width-full gs-margin-top-10" id="selectPattern">
+        <li>
+            <div class="gs-border-gray">
+            在线发送说明：<br>
+            1、请选择通讯组或上传生成新的通讯组；<br>
+            2、编辑短信时请在需要个性化的地方插入个性化字段；
+            </div>
+            <div class="clearfix">
+                <div class="gs-left">
+                    <div class="gs-tool-bar">
+                        <div class="gs-tool-item">
+                            <a href="#" class="gs-button" jsW-open="selectGroup">选择联系组</a>
+                        </div>
+                    </div>
+                    <div class="gs-tool-bar">
+                        <div class="gs-tool-item">
+                            <a href="/contact/contactmanager" class="gs-button">新建联系组</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="gs-left gs-margin-left-20 gs-width-3-4">
+                    <div>预览联系组</div>
+                    <div class="gs-data-list">
+                        <input type="hidden" name="groupId" id="groupId">
+                        <table>
+                            <thead id="groupPreviewHead"></thead>
+                            <tbody id="groupPreviewList"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>输入内容</label>
+                <div class="gs-form-control">
+                <textarea id="txtSmsContent" name="txtSmsContent" rows="5" class="gs-form-large"></textarea>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <div class="gs-form-control">
+                    选择插入字段：
+                    <select id="selInsert">
+                        <option value="">请先选择联系组</option>
+                    </select>
+                    <a href="#" class="gs-button" jsW-open="smsLibrarys">常用短信模板</a>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="gs-border-gray">
+            个性化短信说明：<br>
+            1、请上传固定格式的Excel文件：文件格式示例在此下载：<a href="#" class="gs-text-success gs-text-14 gs-text-bold">示例文件</a><br>
+            2、第二列为短信内容，发送时，内容中的占位符会自动被后面的内容替换。<br>
+            3、每次最多提交数据：【50000】 条<br>
+            4、发送前请点击“预览”查看一下效果，如果预览失败，请检查文件内容格式是否正确，并将文件内容复制，覆盖示例文件内容，再次上传预览。<br>
+            5、替换内容和符号对照表
+                <table style="width:600px;">
+                    <tr>
+                        <td>1</td>
+                        <td>姓名：</td>
+                        <td>{name}</td>
+                        <td>5</td>
+                        <td>生日：</td>
+                        <td>{birthday}</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>性别：</td>
+                        <td>{gender}</td>
+                        <td>6</td>
+                        <td>个性字段1：</td>
+                        <td>{0}</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>联系电话：</td>
+                        <td>{phone}</td>
+                        <td>7</td>
+                        <td>个性字段2：</td>
+                        <td>{1}</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>电子邮件：</td>
+                        <td>{email}</td>
+                        <td>8</td>
+                        <td>个性字段3：</td>
+                        <td>{2}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="gs-form-row">
+                <label>个性化文件</label>
+                <div class="gs-form-control">
+                    <input id="fileDesNoFile" name="fileDesNoFile" type="file">
+                    <input id="btnUploadDes" type="button" value="上传">
+                    <input id="HidPath" name="HidPath" type="hidden">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <span id="upInfo" class="gs-text-red">Excel文件，每行一个号码</span>
+            </div>
+        </li>
+    </ul>
+    <div class="gs-form-row">
+        <label>发送通道</label>
+        <div class="gs-form-control">
+            <select id="selUserPipe" name="selUserPipe">
+                <option value="">请选择您的通道</option>
+                <option value="1" data-info="通道1说明说明说明说明">通道1</option>
+                <option value="2" data-info="通道2说明说明说明说明">通道2</option>
+                <option value="3" data-info="通道3说明说明说明说明">通道3</option>
+                <option value="4" data-info="通道4说明说明说明说明">通道4</option>
+            </select>
+            <input type="hidden" id="hidSendType" value="0">
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <label>通道描述</label>
+        <div class="gs-form-control">
+            <textarea id="pipeDescribe" rows="5" class="gs-form-large" readonly="readonly"></textarea>
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <label>发送时间</label>
+        <div class="gs-form-control">
+            <input name="selPre" type="radio" checked value="0"> 立即发送
+            <input name="selPre" type="radio" value="1"> 定时发送
+            <div id="timingSetting" class="gs-text-danger" style="display: none;">
+                &gt;&gt;选择发送时间：
+                <input id="txtPreTime" name="txtPreTime" type="text" readonly data-date>
+            </div>
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <div class="gs-form-control">
+            <a href="#" class="gs-button" jsW-open="preview">预览</a>
+            <input id="btnSendSms" type="submit" value="发送短信">
+            <label id="lblNotice"></label>
+        </div>
+    </div>
+    </form>
+</div>
+<div id="smsLibrarys" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-550">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">短信模板</div>
+        <div class="gs-modal-content">
+            <div class="gs-tool-bar">
+                <div class="gs-tool-item">
+                    自定义常用短信：
+                    <select id="customCat"></select>
+                </div>
+            </div>
+            <div class="gs-data-list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th class="gs-width-4-5">短信内容</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="customList"></tbody>
+                </table>
+            </div>
+            <div id="customListPage" class="gs-tool-bar gs-page"></div>
+            <hr>
+            <div class="gs-tool-bar">
+                <div class="gs-tool-item">
+                    常用短信：
+                    <select id="commonCat"></select>
+                </div>
+            </div>
+            <div class="gs-data-list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th class="gs-width-4-5">短信内容</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="commonList"></tbody>
+                </table>
+            </div>
+            <div id="commonListPage" class="gs-tool-bar gs-page"></div>
+        </div>
+    </div>
+</div>
+<div id="selectGroup" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-250">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">选择通讯组</div>
+        <div class="gs-modal-content">
+            <div class="gs-tool-bar gs-margin-left-10">
+                <select id="groupList" size="10" class="gs-width-9-10"></select>
+            </div>
+            <div class="gs-align-center gs-margin-top-10">
+                <a href="#" class="gs-button" jsW-cancel>取消</a>
+                <a href="#" class="gs-button" jsW-submit>确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="preview" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-650">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">预览</div>
+        <div class="gs-modal-content">
+            <div class="gs-data-list" style="max-height: 450px; overflow: auto;">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>号码</th>
+                        <th class="gs-width-3-4">内容</th>
+                    </tr>
+                    </thead>
+                    <tbody id="preSmsContent"></tbody>
+                </table>
+            </div>
+            <div class="gs-align-center">
+                <a href="#" class="gs-button" jsW-cancel>确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-main="scripts/gexinghua" src="scripts/require.js"></script>
+</body>
+</html>

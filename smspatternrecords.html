@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>短信备案</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div id="main" class="gs-main-contain" jsw-index="0">
+    <h2>短信备案</h2>
+    <hr>
+    <form id="searchForm" action="" method="get">
+        <div class="gs-tool-bar" id="searchUserSelector">
+            <div class="gs-tool-item">
+                <p><a href="#" class="gs-button" data-for="#searchUser" jsW-open="userSelector">选择用户</a></p>
+                <p><a href="#" class="gs-submit gs-button clearUserSelector" data-for="#searchUser">清空选择</a></p>
+            </div>
+            <div class="gs-tool-item">
+                <textarea id="searchUser" name="user" readonly="readonly" rows="4" cols="150"></textarea>
+                <input type="hidden" name="hidUserId" value="">
+            </div>
+        </div>
+        <div class="gs-tool-bar">
+            <div class="gs-tool-item">
+                选择通道:
+                <select>
+                    <option>通道1</option>
+                    <option>通道2</option>
+                    <option>通道3</option>
+                    <option>通道4</option>
+                    <option>通道5</option>
+                </select>
+            </div>
+            <div class="gs-tool-item">
+                扩展号码:
+                <input type="text" name="numberExt" value="">
+            </div>
+            <div class="gs-tool-item">
+                备案内容：
+                <input class="gs-input-medium" type="text" name="patternContent" value="">
+            </div>
+            <div class="gs-tool-item">
+                <input type="submit" class="gs-submit gs-button" id="btnSearch" value="查询">
+            </div>
+            <div class="gs-tool-item-right">
+                <a href="#" class="gs-button batchDelete">删除本页</a>
+                <a href="#" class="gs-button" jsw-open="record">添加备案</a>
+                <a href="#" class="gs-button" jsw-open="batchRecord">批量备案</a>
+            </div>
+        </div>
+    </form>
+    <div class="gs-data-list">
+        <table>
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>登录代码</th>
+                <th>基础通道</th>
+                <th>移动扩展号</th>
+                <th>联通扩展号</th>
+                <th>电信扩展号</th>
+                <th class="gs-width-1-4">备案内容</th>
+                <th class="gs-width-1-4">备案内容（反转义）</th>
+                <th>是否对子账户生效</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><a class="get-top-note" href="#">admin</a></td>
+                <td>所有通道</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td class="gs-align-left">
+                    <div class="gs-mail-text">
+                        <a>\A.{0,5}360搜索2014年年中合作伙伴大会温馨提示.{1,200}【360搜索】\Z</a>
+                    </div>
+                </td>
+                <td>有效</td>
+                <td>
+                    <a data-id="1" jsw-open="templateMod" href="#">修改</a> |
+                    <a class="delBtn" style="cursor:pointer;" patternId="1">删除</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <input type="hidden" id="patternIds" name="patternIds" value="@(sb.ToString().TrimEnd(','))" />
+    </div>
+    <div class="gs-tool-bar">
+        <div class="gs-tool-item">
+            <a href="#" class="gs-button" jsw-open="batchRecord">批量备案</a>
+            <a href="#" class="gs-button" jsw-open="record">添加备案</a>
+            <a href="#" class="gs-button batchDelete">删除本页</a>
+        </div>
+    </div>
+</div>
+<div id="batchRecord" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-500">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">批量备案</div>
+        <div class="gs-modal-content">
+            <form class="gs-form" action="" method="post" enctype="multipart/form-data"
+                  target="hidUploadFrame">
+                <div class="gs-form-row">
+                    <label>备案文件：</label>
+                    <div class="gs-form-control-large">
+                        <iframe name="hidUploadFrame" frameborder="0" style="width: 0; height: 0;"></iframe>
+                        <input type="file" id="patternFile" name="patternFile">
+                        <input type="submit" id="uploadBtn" value="上传">
+                        <span id="uploadNotifi" style="color: Red;"></span>
+                        <div>支持csv,excel文件。一行一个备案模版。<a href="#" class="gs-text-danger">下载模板示例</a></div>
+                    </div>
+                </div>
+            </form>
+            <form id="batchRecordForm" action="" method="post" class="gs-form">
+                <div class="gs-form-row">
+                    <div class="gs-form-control-large">
+                        <input type="checkbox" name="isAllUser" value="1">全局备案
+                        <input type="checkbox" name="isChildValid" value="1">是否对子账号生效
+                        <input type="checkbox" name="isAllPipe" value="1">是否对所有通道生效
+                    </div>
+                </div>
+                <div class="selectUserRow gs-form-row">
+                    <label>
+                        <a href="#" class="gs-button" data-for="#batchRecordUser" jsW-open="userSelectorOne">选择用户</a>
+                    </label>
+                    <div class="gs-form-control-large">
+                        <textarea id="batchRecordUser" name="user" rows="5" cols="50" readonly="readonly"></textarea>
+                        <input type="hidden" name="hidUserId" />
+                    </div>
+                </div>
+                <div class="selectPipeRow gs-form-row">
+                    <label>
+                        <a href="#" class="gs-button" data-for="#batchRecordPipe" jsW-open="channelSelector">基础通道</a></label>
+                    <div class="gs-form-control-large">
+                        <textarea id="batchRecordPipe" name="channel" rows="5" cols="50" readonly="readonly"></textarea>
+                        <input type="hidden" name="hidChannelId" />
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <input type="hidden" name="filePath" id="filePath">
+                    <p>文件预览（仅显示前3条模版）</p>
+                    <hr>
+                    <div class="gs-data-list">
+                        <table>
+                            <tbody id="previewFile"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-right">
+                        <a href="#" class="gs-button" jsW-cancel>取消操作</a>
+                        <a href="#" class="gs-button" jsW-submit>确定添加</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="record" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-600">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">添加备案</div>
+        <div class="gs-modal-content">
+            <form id="addRecordForm" action="" method="post" class="gs-form">
+                <div class="gs-form-row">
+                    <div class="gs-form-control-large">
+                        <input type="checkbox" name="isAllUser" value="1">全局备案
+                        <input type="checkbox" name="isChildValid" value="1">是否对子账号生效
+                        <input type="checkbox" name="isAllPipe" value="1">是否对所有通道生效
+                    </div>
+                </div>
+                <div class="selectUserRow gs-form-row">
+                    <label>
+                        <a href="#" class="gs-button" data-for="#recordUser" jsW-open="userSelectorOne">选择用户</a>
+                    </label>
+                    <div class="gs-form-control-large">
+                        <input id="recordUser" name="user" type="text" readonly="readonly">
+                        <input type="hidden" id="recordUserId" name="hidUserId">
+                        <a href="#" class="gs-button clearUserSelector" data-for="#recordUser">清空选择</a>
+                    </div>
+                </div>
+                <div class="selectPipeRow gs-form-row">
+                    <label>
+                        <a href="#" class="gs-button" data-for="#recordPipe" jsW-open="channelSelector">选择通道</a>
+                    </label>
+                    <div class="gs-form-control-large">
+                        <textarea id="recordPipe" name="channel" rows="2" cols="55" readonly="readonly"></textarea>
+                        <input type="hidden" id="recordPipeId" name="hidChannelId">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>下发扩展</label>
+                    <div class="gs-form-control-large">
+                        <input class="gs-form-little" type="text" name="userExt" ver-mode="{pattern:'/^[0-9]+$/'}">
+                        <span class="gs-form-tip">（移动）</span>
+                        <input class="gs-form-little" type="text" name="userExtLT" ver-mode="{pattern:'/^[0-9]+$/'}">
+                        <span class="gs-form-tip">（联通）</span>
+                        <input class="gs-form-little" type="text" name="userExtDX" ver-mode="{pattern:'/^[0-9]+$/'}">
+                        <span class="gs-form-tip">（电信）</span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <textarea class="controller" id="patternContent" name="patternContent" rows="4" cols="93" ver-mode="{notEmpty: true}"></textarea>
+                </div>
+                <div class="gs-form-row">
+                    <label><input id="normalMode" name="patternMode" type="radio" checked>普通模式</label>
+                    <label><input id="keywordMode" name="patternMode" type="radio">关键词屏蔽模式</label>
+                </div>
+                <div  id="normalTable" class="gs-form-row clearfix">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td>\A</td>
+                            <td>表示备案内容的开头（必须）</td>
+                            <td><a class="input-reg" href="#" data-reg="\A">插入</a></td>
+                        </tr>
+                        <tr>
+                            <td>.{1,n}</td>
+                            <td>n为自然数，表示插入的内容是一串字数【大于1，小于n】的任意字符<br>如：.{1,5}，代表插入1到5个任意字符</td>
+                            <td><a class="input-reg" href="#" data-reg=".{1,n}">插入</a></td>
+                        </tr>
+                        <tr>
+                            <td>(\r\n|\n)</td>
+                            <td>表示备案内容在此处换一行</td>
+                            <td><a class="input-reg" href="#" data-reg="(\r\n|\n)">插入</a></td>
+                        </tr>
+                        <tr>
+                            <td>\Z</td>
+                            <td>表示备案内容的结尾（必须）</td>
+                            <td><a class="input-reg" href="#" data-reg="\Z">插入</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div>
+                        <p>
+                            实例：<br>
+                            备案内容：\A你好，<span class="gs-text-danger">.{1,3}</span>，您的注册号：<span class="gs-text-danger">.{1,5}</span>【西子】\Z<br>
+                            可发短信： 你好，<span class="gs-text-danger">张先生</span>，您的注册号：<span class="gs-text-danger">3112</span>【西子】<br>
+                            不可发短信：<span class="gs-text-danger">张先生</span>，您的注册号：<span class="gs-text-danger">311332</span>【西子】<br>
+                            <span class="gs-form-tip">开头缺少模板中的【<span class="gs-text-danger gs-text-bold">你好</span>】两字，注册号一共【6】位数字，超过了模板设定的【<span class="gs-text-danger gs-text-bold">1-5个字符</span>】</span>
+                        </p>
+                    </div>
+                </div>
+                <div id="keywordTable" class="gs-form-row" style="display:none;">
+                    多个关键词之间用“|”分隔，示例：关键词A|关键词B|关键词C
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-right">
+                        <a href="#" class="gs-button" jsW-cancel>取消操作</a>
+                        <a href="#" class="gs-button" jsW-submit>确定添加</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="channelSelector" class="gs-modal" jsw-index="2">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">组合通道</div>
+        <div class="gs-modal-content">
+            <form class="gs-form">
+                <div class="gs-form-row">
+                    @Html.DropDownList("basePipeId", Model.PipeList.Skip(1), new { @class = "gs-width-full", @multiple = "multiple", @size = "10" })
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-center">
+                        <a href="#" class="gs-button" jsW-cancel>取消</a>
+                        <a href="#" class="gs-button" jsW-submit>确定</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="userSelector" class="gs-modal" jsw-index="2">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">用户选择</div>
+        <div class="gs-modal-content">
+            <form class="gs-form" onsubmit="return false;">
+                <div class="gs-form-row">
+                    <label>登录代码：</label>
+                    <div class="gs-form-control">
+                        <input id="likeUserCode" type="text" enter-control="{targetBtn:'#searchUsers'}">
+                        <a id="searchUsers" class="gs-button">搜索</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <select id="userList" multiple="multiple" class="gs-width-full" size="10"></select>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-center">
+                        <a href="#" class="gs-button" jsW-cancel>取消</a>
+                        <a href="#" class="gs-button" jsW-submit>确定</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 模板修改窗口 -->
+<div id="templateMod" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-500">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div class="gs-modal-title">模板修改</div>
+        <div class="gs-modal-content">
+            <form id="templateModForm" action="" method="post" class="gs-form">
+                <input type="hidden" id="tmpModId" name="Id">
+                <div class="gs-form-row">
+                    <div class="gs-form-control-large">
+                        <label>是否对子账户生效 <input type="checkbox" id="modIsChildValid" name="isChildValid" value="1"></label>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>通道选择：</label>
+                    <div class="gs-form-control-large">
+                        <select id="modPipeId"></select>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>登录代码：</label>
+                    <div class="gs-form-control-large">
+                        <input id="tplModUser" name="userCode" type="text" readonly="readonly" jsW-open="userSelectorOne" data-for="#tplModUser" ver-mode="{notEmpty: true}">
+                        <input id="tplModUserId" name="hidUserId" type="hidden" />
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>下发扩展</label>
+                    <div class="gs-form-control-large">
+                        <input type="text" id="tplModUserExt" name="userExt" ver-mode="{isNum: true}">
+                        <span class="gs-form-tip">（移动）</span>
+                    </div>
+                    <div class="gs-form-control-large">
+                        <input type="text" id="tplModUserExtLT" name="userExtLT" ver-mode="{isNum: true}">
+                        <span class="gs-form-tip">（联通）</span>
+                    </div>
+                    <div class="gs-form-control-large">
+                        <input type="text" id="tplModUserExtDX" name="userExtDX" ver-mode="{isNum: true}">
+                        <span class="gs-form-tip">（电信）</span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>模板内容：</label>
+                    <div class="gs-form-control-large">
+                        <textarea id="tplModContent" name="patternContent" cols="50" rows="5" ver-mode="{notEmpty: true}"></textarea>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-center">
+                        <a href="#" class="gs-button" jsw-cancel>取消</a>
+                        <a href="#" class="gs-button" jsw-submit>修改</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- 用户选择：非多选 -->
+<div id="userSelectorOne" class="gs-modal" jsw-index="2">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">用户选择</div>
+        <div class="gs-modal-content">
+            <form class="gs-form" onsubmit="return false;">
+                <div class="gs-form-row">
+                    <label>登录代码：</label>
+                    <div class="gs-form-control">
+                        <input id="likeUserCodeOne" type="text" enter-control="{targetBtn:'#searchUsersOne'}">
+                        <a id="searchUsersOne" class="gs-button">搜索</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <select id="userListOne" class="gs-width-full" size="10"></select>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-center">
+                        <a href="#" class="gs-button" jsW-cancel>取消</a>
+                        <a href="#" class="gs-button" jsW-submit>确定</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script data-main="scripts/SmsPatternRecords" src="scripts/require.js"></script>
+</body>
+</html>

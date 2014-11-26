@@ -1,0 +1,37 @@
+#keyboard {
+  position: absolute;
+  z-index: 9;
+  width: 90px;
+  height: 120px;
+  padding: 5px;
+  background: #6688cc; }
+  #keyboard .key {
+    float: left;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid #6688cc;
+    background: white; }
+  #keyboard .key-big {
+    width: 88px; }
+  #keyboard .disabled {
+    background: #cccccc; }
+
+.keyboard-target {
+  width: 40px !important;
+  color: #c10f21 !important; }
+
+#csList {
+  position: absolute;
+  z-index: 9;
+  background: white; }
+
+.cs-list-target {
+  width: 200px; }
+
+.cs-list-source {
+  width: 200px;
+  border: 1px solid #6688cc; }

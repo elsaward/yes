@@ -1,0 +1,11 @@
+{
+    "InfoList":[
+        {"PipeId":"161","PipeName":"通道1"},
+        {"PipeId":"22","PipeName":"通道2"},
+        {"PipeId":"188","PipeName":"通道3"},
+        {"PipeId":"163","PipeName":"通道4"}
+    ],
+    "Amount":3,
+    "Code":10,
+    "Description":"请求成功"
+}

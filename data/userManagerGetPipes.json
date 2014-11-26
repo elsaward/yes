@@ -1,0 +1,6 @@
+[
+    {"ID":1,"SetName":"用户通道1","UserOpenTime":"00:00","UserCloseTime":"23:59","UseTypeText":"语音","BasePipeName":"语音短信","PipeSetType":1},
+    {"ID":2,"SetName":"通道1","UserOpenTime":"08:00","UserCloseTime":"18:00","UseTypeText":"短信","BasePipeName":"移动1,电信1,联通1","PipeSetType":0},
+    {"ID":3,"SetName":"通道2","UserOpenTime":"08:00","UserCloseTime":"18:00","UseTypeText":"短信","BasePipeName":"移动2,电信2,联通2","PipeSetType":0},
+    {"ID":4,"SetName":"通道3","UserOpenTime":"08:00","UserCloseTime":"18:00","UseTypeText":"短信","BasePipeName":"移动3,电信3,联通3","PipeSetType":0}
+]

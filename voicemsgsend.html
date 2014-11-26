@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>短信平台</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+    <link rel="stylesheet" type="text/css" href="content/css/main.css">
+    <link rel="stylesheet" type="text/css" href="content/css/voicemsg.css">
+    <link rel="stylesheet" type="text/css" href="content/css/verify.css">
+</head>
+<body>
+<form id="form1">
+    <div id="main" jsw-index="0">
+        <div class="gs-side-bar" style="width: 270px;">
+            <h3>请选择发送号码</h3>
+            <p>号码添加方式说明（请选择其中一种）<br>
+                1	 可在下方输入框内输入号码，每行一个号码；<br>
+                2	 可在下方“联系组发送”中选中您的联系组；<br>
+                3	 可在下方“上传号码”中上传您的号码文件。</p>
+            <div class="gs-tool-bar">
+                <ul id="selSendType" class="gs-switcher" data-switcher="{connect:'#getSource'}">
+                    <li><a href="#">号码发送</a></li>
+                    <li><a href="#">联系组发送</a></li>
+                    <li><a href="#">上传号码</a></li>
+                </ul>
+            </div>
+            <ul class="gs-switcher-item gs-width-full" id="getSource">
+                <li>
+                    <textarea id="txtDesNo" class="gs-width-9-10" rows="10"></textarea>
+                    <div class="gs-tool-bar">
+                        本次共提交号码：<span id="desCount">0</span><br>
+                        若填入号码大于1000，默认显示前1000条。<br>
+                        如需多次粘贴，请在每次粘贴后点击【显示全部】
+                    </div>
+                    <hr>
+                    <div class="gs-tool-bar">号码去除功能：</div>
+                    <div class="gs-tool-bar">
+                        <div class="gs-tool-item">
+                            <a id="btnChongFu" href="#" class="gs-button">重复</a>
+                            <a id="btnCuoHao" href="#" class="gs-button">错号</a>
+                        </div>
+                        <div class="gs-tool-item">
+                            <a href="#" class="gs-button del-sec" data-id="0">移动</a>
+                            <a href="#" class="gs-button del-sec" data-id="1">电信</a>
+                            <a href="#" class="gs-button del-sec" data-id="2">联通</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <select id="ddlGroups" class="gs-width-9-10" multiple size="20">
+                            <option value="1">联系组1</option>
+                            <option value="2">联系组2</option>
+                            <option value="3">联系组3</option>
+                            <option value="4">联系组4</option>
+                            <option value="5">联系组5</option>
+                            <option value="6">联系组6</option>
+                            <option value="7">联系组7</option>
+                            <option value="8">联系组8</option>
+                        </select>
+                    </div>
+                </li>
+                <li>
+                    <div class="gs-tool-bar">
+                        <div class="gs-tool-item">
+                            <input type="file" id="fileDesNoFile" name="fileDesNoFile">
+                        </div>
+                        <div class="gs-tool-item">
+                            <a id="btnUploadDes" href="#" class="gs-button">上传</a>
+                            <input id="txtUpNo" type="hidden" value="">
+                        </div>
+                    </div>
+                    <div class="gs-tool-bar gs-text-danger">
+                        <span id="upInfo" class="gs-text-success"></span><br>
+                        支持Txt文件、Excel文件、Csv文件,【360浏览器请更新到最新版本，否则可能存在无法上传数据的问题】<br>
+                        rar、zip文件包上传示例图：<a href="#" target="_blank">查看</a><br>
+                        压缩包过大，压缩包内文件过大时请分多个压缩包上传<br>
+                    </div>
+                </li>
+            </ul>
+            <hr>
+            <div class="gs-tool-bar">
+                <div class="gs-tool-item">
+                    <input id="btnClr" type="button" value="清空号码">
+                    <input id="btnShowAll" type="button" value="显示全部" disabled>
+                </div>
+            </div>
+            <div class="gs-tool-bar">
+                <p><span id="progressWarning" class="gs-text-danger"></span><br>
+                    完成进度：<span id="progressPer"></span><br>
+                    去除结果：<span id="delResult"></span><br>
+            </div>
+        </div>
+        <div class="gs-wide-content gs-form" style="left: 300px;">
+            <div class="gs-main-contain">
+                <h2>语音短信发送</h2>
+                <hr>
+                <div class="gs-form-row">
+                    当前语音短信余额：<label id="txtBalance" class="gs-text-danger"></label>&nbsp;元
+                </div>
+                <div class="gs-form-row">
+                    <label>任务名称</label>
+                    <div class="gs-form-control">
+                        <input type="text" name="itemName" value="" ver-mode="{notEmpty:'true'}">
+                        <input type="hidden" id="Hide_DesNo" name="Hide_DesNo">
+                        <input type="hidden" id="hidSendType" name="hidSendType" value="1">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>语音短信配置</label>
+                    <div class="gs-form-control">
+                        <select id="selConfigId" name="selConfigId" class="gs-form-longer">
+                            <option value="0">自定义配置</option>
+                            <option value="1">配置1</option>
+                            <option value="2">配置2</option>
+                            <option value="3">配置3</option>
+                            <option value="4">配置4</option>
+                        </select>
+                        <a class="gs-button" href="#">管理配置</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>通道选择</label>
+                    <div class="gs-form-control">
+                        <select id="selPipeSet" name="selPipeSet" class="gs-form-longer"></select>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>主叫号码</label>
+                    <div class="gs-form-control">
+                        <select id="selMainPhoneNum" name="selMainPhoneNum" class="gs-form-longer" ver-mode="{notEmpty:'true'}"></select>
+                        <a class="gs-button" href="#">主叫号码设置</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>群呼语音</label>
+                    <div class="gs-form-control">
+                        <select id="selFile" name="selFile" class="gs-form-longer" ver-mode="{notEmpty:'true'}"></select>
+                        <a class="gs-button" href="#">语音管理</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>播放次数</label>
+                    <div class="gs-form-control">
+                        <select name="play_times" class="gs-form-small" ver-mode="{notEmpty:'true', pattern:'/^[1,2]$/'}">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>最大线路数</label>
+                    <div class="gs-form-control">
+                        <input type="text" name="maxChnlNum" value="30" ver-mode="{notEmpty:'true', pattern:'/^(200|1[0-9]0|[1-9]0)$/'}">
+                        <span class="gs-form-tip">可在10-200之间填写，只允许是10的整数倍。</span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>回拨方式</label>
+                    <div class="gs-form-control">
+                        <input type="radio" name="call_back_mode" value="0" checked ver-mode="{notEmpty:'true'}" /><label>不回拨</label>
+                        <input type="radio" name="call_back_mode" value="1" ver-mode="{notEmpty:'true'}" /><label>指定按键回拨或放音</label>
+                        <input type="radio" name="call_back_mode" value="2" ver-mode="{notEmpty:'true'}" /><label>任意键回拨</label>
+                        <input type="radio" name="call_back_mode" value="3" ver-mode="{notEmpty:'true'}" /><label>播放完语音短信自动回拨</label>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>发送时间</label>
+                    <div class="gs-form-control">
+                        <label><input type="radio" name="selPre" value="0" checked>立即发送</label>
+                        <label><input type="radio" name="selPre" value="1">定时发送</label>
+                    </div>
+                </div>
+                <div id="divPreTime" class="gs-form-row" style="display:none;">
+                    <label>选择发送时间</label>
+                    <div class="gs-form-control">
+                        <input id="txtPreTime" class="gs-form-medium" readonly type="text" data-date>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <input type="button" id="addCmd" disabled="disabled" value="添加指令">
+                    <a class="gs-button" href="#">客服号码设置</a>
+                    <p class="gs-text-danger">
+                        * 每组客服最多可设置10位人工客服。
+                    </p>
+                    <div id="cmdRowBox"></div>
+                </div>
+                <div id="singleCS" class="gs-tool-bar" style="display:none;">
+                    <div class="gs-tool-item">选择客服电话</div>
+                    <div class="gs-tool-item">
+                        <select id="singleCSSource" class="gs-form-longer" size="10"></select><br>
+                        可选择客服（双击选择）
+                    </div>
+                    <div class="gs-tool-item">
+                        <select id="singleCSSel" class="gs-form-longer" size="10"></select><br>
+                        已选择客服（双击删除）
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-form-control">
+                        <button id="btnSendSms" class="gs-big-button">发送语音短信</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="csList" style="display: none;">
+        <p>双击选择：</p>
+        <select id="csListSel" size="10" class="cs-list-source"></select>
+    </div>
+    <input type="hidden" id="HiddenGroupName" name="HiddenGroupName">
+    <input type="hidden" id="SavaFile" name="SavaFile">
+    <input id="settingString" name="dataStr" type="hidden">
+</form>
+</body>
+<script data-main="scripts/voicemsgsend" src="scripts/require.js"></script>
+</html>

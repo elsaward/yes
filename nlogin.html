@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>短信平台</title>
+    <link rel="stylesheet" href="content/css/nlogin.css">
+    <link rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div class="header">
+    <div class="top-link">业务咨询电话：400-xxxx-xxxx | 帮助中心</div>
+</div>
+<div class="container">
+    <div class="main">
+        <ul class="list">
+            <li>● 移动、联通、电信三网融合</li>
+            <li>● 多级账户管理功能</li>
+            <li>● 个性化短信</li>
+            <li>● 短信模板库</li>
+            <li>● 回复短信自动转发</li>
+            <li>● 统计分析报告</li>
+        </ul>
+        <form id="loginForm" class="login-form" action="mainframe.html">
+            <h2>登录平台</h2>
+            <div class="icon-input icon-user">
+                <input id="txtUserName" name="username" type="text" ver-mode="{notEmpty: 'true'}">
+            </div>
+            <div class="icon-input icon-pass">
+                <input id="txtPassword" name="password" type="password" ver-mode="{notEmpty: 'true'}">
+            </div>
+            <div class="code-line">
+                <input id="txtIdentycode" type="text" maxlength="4" ver-mode="{notEmpty: 'true'}">
+                <img id="identycode" src="content/images/identifyingcode.png">
+                <a id="changeCode" href="#">换一张</a>
+            </div>
+            <div>
+                <input id="loginSubmit" class="login-button" type="submit" value="登录">
+            </div>
+        </form>
+    </div>
+</div>
+<div id="changePW" class="gs-modal" jsw-index="10">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div class="gs-modal-title">修改密码</div>
+        <div class="gs-modal-content">
+            <p id="modMsg" class="gs-text-danger"></p>
+            <form class="gs-form" id="modPassword">
+                <div class="gs-form-row">
+                    <label>　旧密码：</label>
+                    <div class="gs-form-control">
+                        <input id="oldPwd" name="oldPwd" class="gs-form-large" type="password" ver-mode="{notEmpty: 'true'}">
+                        <input id="userCode" name="userCode" type="hidden">
+                        <input id="modifyType" name="modifyType" type="hidden">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>　新密码：</label>
+                    <div class="gs-form-control">
+                        <input id="newPwd" name="newPwd" class="gs-form-large" type="password" ver-mode="{repeatFor: 'renewPwd'}">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>重复密码：</label>
+                    <div class="gs-form-control">
+                        <input id="renewPwd" name="renewPwd" class="gs-form-large" type="password" ver-mode="{repeatFor: 'newPwd'}">
+                    </div>
+                </div>
+                <div class="gs-modal-control">
+                    <a class="gs-button" jsw-submit>确认修改</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="gs-loading" class="gs-modal">
+    <div class="gs-modal-dialog">
+        <div class="gs-modal-content">
+            <img src="content/images/load.gif" width="22" height="22"> 操作中...
+        </div>
+    </div>
+</div>
+<div id="gs-modal" class="gs-modal">
+    <div class="gs-modal-dialog">
+        <div class="gs-modal-content"></div>
+    </div>
+</div>
+<script data-main="scripts/login" src="scripts/require.js"></script>
+</body>
+</html>

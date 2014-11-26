@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>发送数量查询</title>
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div id="main" class="gs-main-contain" jsW-index="0">
+    <h2>通道查询</h2>
+    <hr>
+    <form id="searchForm" action="" method="post" class="gs-form">
+        <div class="gs-tool-bar">
+            <label><input type="checkbox" id="checkBoxHistory" name="CheckBoxHistory" value="1">历史库查询（只能查一天）</label>
+        </div>
+        <div class="gs-tool-bar">
+            <div class="gs-left">
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        <input id="searchPipe" class="gs-form-small" type="text">
+                        <a id="searchPipeBtn" class="gs-button" href="#">查询</a>
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        <select id="baseDropDown" class="gs-form-medium" name="baseDropDown" multiple="multiple" size="10">
+                            <option>通道1</option>
+                            <option>通道2</option>
+                            <option>通道3</option>
+                            <option>通道4</option>
+                            <option>通道5</option>
+                            <option>通道6</option>
+                            <option>通道7</option>
+                            <option>通道8</option>
+                            <option>通道9</option>
+                            <option>通道10</option>
+                            <option>通道11</option>
+                            <option>通道12</option>
+                            <option>通道13</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="gs-left gs-tool-item gs-margin-top-20">
+                <ul class="gs-margin-top-30">
+                    <li><a href="#" id="selPipeAll" class="gs-mini-button">&gt;&gt;</a></li>
+                    <li><a href="#" id="selPipe" class="gs-mini-button">&gt;</a></li>
+                    <li><a href="#" id="clrPipe" class="gs-mini-button">&lt;</a></li>
+                    <li><a href="#" id="clrPipeAll" class="gs-mini-button">&lt;&lt;</a></li>
+                </ul>
+            </div>
+            <div class="gs-left">
+                <div class="gs-tool-bar"><div class="gs-tool-item">已选基础通道：</div></div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        <select id="selectedPipes" class="gs-form-medium" multiple="multiple" size="10"></select>
+                        <input type="hidden" id="hidPipes" name="Pipes">
+                    </div>
+                </div>
+            </div>
+            <div class="gs-left gs-margin-left-30">
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        操作时间：
+                        <input id="txtStart" name="StartT" readonly type="text" data-calendar>
+                    <span id="txtEndSpan">至
+                    <input id="txtEnd" name="EndT" readonly type="text" data-calendar></span>
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        选择用户：
+                        <input id="txtSelectUser" type="text" readonly>
+                        <input id="hidSelectUser" type="hidden" name="UserCodeStr">
+                        <a class="gs-button" href="#" jsW-open="userSelector" data-for="#txtSelectUser">选择</a>
+                        <a id="clearUser" class="gs-button" href="#">清空</a>
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        发送状态：
+                        <select id="statusDropDown" name="SendStatus">
+                            <option value="-10">全部</option>
+                            <option value="1">成功</option>
+                            <option value="-1">失败</option>
+                            <option value="-11">已重发</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        到达状态：
+                        <select id="reachDropDown" name="RealStatus">
+                            <option value="-10">全部</option>
+                            <option value="UNDELIVRD">UNDELIVRD</option>
+                            <option value="DELIVRD">DELIVRD</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gs-tool-bar gs-margin-top-15">
+                    <a id="redeliverBtn" href="#" class="gs-button">条件重发</a>
+                    <a id="countBtn" href="#" class="gs-button">查询数量</a>
+                    <a id="searchBtn" href="#" class="gs-button">查询明细</a>
+                </div>
+            </div>
+            <div class="gs-left gs-margin-left-30">
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        短信内容：
+                        <input type="text" class="gs-form-medium" id="conetent" name="SmsContent">
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        手机号码：
+                        <input type="text" class="gs-form-medium" id="numberNo" name="DestinationNO">
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        　批次号：
+                        <input id="interSeq" class="gs-form-medium" type="text" name="SeqNO">
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        　　失败：
+                        <select id="failureControl" name="failureControl">
+                            <option value="">全部</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gs-tool-bar">
+                    <div class="gs-tool-item">
+                        查询数量结果：
+                        <span class="gs-text-red" id="countForResult"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="gs-data-list">
+        <table>
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>发送人</th>
+                <th>发送通道</th>
+                <th>批次号 </th>
+                <th class="gs-width-1-4">内容</th>
+                <th>号码</th>
+                <th>操作时间</th>
+                <th>发送时间</th>
+                <th>提交状态</th>
+                <th>到达状态</th>
+                <th>失败</th>
+            </tr>
+            </thead>
+            <tbody id="dataList"></tbody>
+        </table>
+    </div>
+    <div id="dataListPage" class="gs-tool-bar gs-right gs-page"></div>
+    <div class="gs-tool-bar">
+        <a href="#" id="exportBtn" class="gs-button">导出</a>
+    </div>
+</div>
+<div id="userSelector" class="gs-modal" jsw-index="2">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">用户选择</div>
+        <div class="gs-modal-content">
+            <form class="gs-form" onsubmit="return false;">
+                <div class="gs-form-row">
+                    <label>登录代码：</label>
+                    <div class="gs-form-control">
+                        <input id="likeUserCode" type="text" enter-control="{targetBtn:'#searchUsers'}">
+                        <a id="searchUsers" class="gs-button">搜索</a>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <select id="userList" multiple="multiple" class="gs-width-full" size="10"></select>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-align-center">
+                        <a href="#" class="gs-button" jsW-cancel>取消</a>
+                        <a href="#" class="gs-button" jsW-submit>确定</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="reSendBox" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">条件重发</div>
+        <div class="gs-modal-content">
+            <iframe id="resendFrame" frameborder="0" scrolling="auto" height="400" src=""></iframe>
+        </div>
+    </div>
+</div>
+<script data-main="scripts/PipeSearch" src="scripts/require.js"></script>
+</body>
+</html>

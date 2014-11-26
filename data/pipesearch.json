@@ -1,0 +1,14 @@
+{
+    "InfoList":[
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"},
+        {"SendUser":"admin","SendPipe":"移动","SeqNo":"111","PhoneNum":"11111111111","SmsContent":"内容内容内容","OperateTime":"2014-07-14 08:00:19","SendTime":"2014-07-14 08:00:26","SendStatus":"发送成功","RealStatus":"","FailureRate":"0"}
+    ],
+    "Amount":5,
+    "Code":10,
+    "Description":"请求成功"
+}

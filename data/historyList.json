@@ -1,0 +1,48 @@
+{
+    "InfoList":[
+        {
+            "Id":86,
+            "Level":2,
+            "LevelString":"优先",
+            "Recorder":"Admin",
+            "CreatedString":"2014/9/23 14:59:14",
+            "UserCode":"Admin",
+            "Description":"fafafd",
+            "MemoType":0,
+            "Category":"客户问题",
+            "BelongToSales":null,
+            "BelongToSupport":null
+        },
+        {
+            "Id":50,
+            "Level":2,
+            "LevelString":"优先",
+            "Recorder":"Admin",
+            "CreatedString":"2014/9/9 15:21:51",
+            "UserCode":"Admin",
+            "Description":"testets",
+            "MemoType":0,
+            "Category":"客户问题",
+            "BelongToSales":null,
+            "BelongToSupport":null
+        },
+        {
+            "Id":47,
+            "Level":2,
+            "LevelString":"优先",
+            "Recorder":"Admin",
+            "CreatedString":"2014/9/9 14:20:34",
+            "UserCode":"Admin",
+            "Description":"testest",
+            "MemoType":0,
+            "Category":"客户问题",
+            "BelongToSales":null,
+            "BelongToSupport":null
+        }
+    ],
+    "Amount":3,
+    "Code":10,
+    "Description":"请求成功"
+}
+
+

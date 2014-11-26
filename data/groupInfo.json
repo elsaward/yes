@@ -1,0 +1,10 @@
+{
+    "GroupName":"测试",
+    "InfoList":[
+        {"FieldId":3833,"FieldName":"手机号","FieldCode":"Mobile_","FieldIndex":"0"},
+        {"FieldId":3834,"FieldName":"内容","FieldCode":"ContentText_","FieldIndex":"1"},
+        {"FieldId":3835,"FieldName":"姓名","FieldCode":"Name_","FieldIndex":"2"}],
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

@@ -1,0 +1,19 @@
+{
+    "InfoList":[
+        {"Id":81,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/10 11:12:51","UserCode":"","Description":"悠闲悠闲","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":77,"Level":1,"LevelString":"普通","Recorder":"Admin","CreatedString":"2014/9/9 17:59:55","UserCode":"","Description":"fddfffadff","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":75,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/9 17:59:43","UserCode":"","Description":"hgffgfgff","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":58,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/9 16:06:47","UserCode":"","Description":"sql server","MemoType":1,"Category":"客服问题","BelongToSales":null,"BelongToSupport":null},
+        {"Id":57,"Level":3,"LevelString":"重要","Recorder":"Admin","CreatedString":"2014/9/9 16:06:20","UserCode":"","Description":"！旺旺：花开满树桠【花开满树桠】","MemoType":1,"Category":"客服问题","BelongToSales":null,"BelongToSupport":null},
+        {"Id":56,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/9 16:06:16","UserCode":"","Description":"sql语句 能认真点写吗？","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":55,"Level":3,"LevelString":"重要","Recorder":"Admin","CreatedString":"2014/9/9 16:06:12","UserCode":"","Description":"sql语句 能认真点写吗？","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":54,"Level":3,"LevelString":"重要","Recorder":"Admin","CreatedString":"2014/9/9 16:06:04","UserCode":"","Description":"sql语句 能认真点写吗？","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":53,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/9 16:05:30","UserCode":"","Description":"我们的小苹果","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null},
+        {"Id":52,"Level":2,"LevelString":"优先","Recorder":"Admin","CreatedString":"2014/9/9 16:04:46","UserCode":"","Description":"客服备忘， sql语句一定要写好 客服备忘， sql语句一定要写好 客服备忘， sql语句一定要写好 客服备忘， sql语句一定要写好 ","MemoType":1,"Category":"","BelongToSales":null,"BelongToSupport":null}
+    ],
+    "Amount":3,
+    "Code":10,
+    "Description":"请求成功"
+}
+
+

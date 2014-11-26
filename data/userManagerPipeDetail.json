@@ -1,0 +1,8 @@
+{
+    "PipeBackList":[
+        {"ID":227,"TeleComName":"电信","PipeName":"主通道","IsMorethan":1,"MessageSum":1000,"Messagearea":"湖北,辽宁,陕西,广西,四川,云南,安徽,内蒙古","MesLength":""},
+        {"ID":228,"TeleComName":"电信","PipeName":"287-JS电信","IsMorethan":1,"MessageSum":1000,"Messagearea":"","MesLength":""},
+        {"ID":224,"TeleComName":"移动","PipeName":"主通道","IsMorethan":null,"MessageSum":null,"Messagearea":"","MesLength":"66|"},
+        {"ID":243,"TeleComName":"移动","PipeName":"341-TC移动应用","IsMorethan":null,"MessageSum":null,"Messagearea":"","MesLength":""}
+    ]
+}

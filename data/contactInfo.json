@@ -1,0 +1,20 @@
+{
+    "Result":{
+        "Id":36026,
+        "UserCode":"Admin",
+        "GroupId":770,
+        "Field0":"李四",
+        "Field1":"女",
+        "Field2":"15001010101",
+        "Field3":"123@qq.com",
+        "Field4":"斜土路70号",
+        "Field5":"",
+        "Field6":"",
+        "Field7":"",
+        "Field8":"",
+        "Field9":""
+    },
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

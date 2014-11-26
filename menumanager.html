@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>菜单列表</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="content/css/main.css">
+    <link type="text/css" rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div class="gs-main-contain">
+    <h2>菜单列表</h2>
+    <hr>
+    <div class="gs-side-bar" style="top: 40px;">
+        <ul id="menuTree" class="gs-tree"></ul>
+    </div>
+    <div class="gs-wide-content" style="top: 40px;">
+    <form id="menuForm" class="gs-form gs-margin-left-30">
+        <div class="gs-form-row">
+            <label for="menuName">名称：</label>
+            <div class="gs-form-control">
+                <input id="menuName" type="text" ver-mode="{notEmpty: 'true'}">
+                <input id="menuId" type="hidden">
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <label for="url">URL：</label>
+            <div class="gs-form-control">
+                <input id="url" class="gs-input-medium" type="text">
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <label for="parent">父级：</label>
+            <div class="gs-form-control">
+                <select id="parent" ver-mode="{notEmpty: 'true'}"></select>
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <label for="order">排序：</label>
+            <div class="gs-form-control">
+                <input id="order" class="gs-input-mini" type="text" value="0" ver-mode="{notEmpty: 'true'}">
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <div class="gs-form-control">
+                <a id="addMenu" href="#" class="gs-button">新增</a>
+                <a id="clearForm" href="#" class="gs-button">清空</a>
+
+            </div>
+        </div>
+        <div id="menuOption" class="gs-form-row" style="display: none;">
+            <div class="gs-form-control">
+                <a id="modMenu" href="#" class="gs-button">修改</a>
+                <a id="delMenu" href="#" class="gs-button gs-button-danger">删除</a>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<script data-main="scripts/menulist" src="scripts/require.js"></script>
+</body>
+</html>

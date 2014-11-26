@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>通讯录管理</title>
+    <link type="text/css" rel="stylesheet" href="content/css/main.css">
+    <link type="text/css" rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div class="gs-main-contain" jsW-index="0">
+    <h2>通讯录管理</h2>
+    <hr>
+    <div class="gs-tool-bar">
+        <div class="gs-tool-item">
+            <a href="#" class="gs-button" jsW-open="importGroup">导入并新建联系组</a>
+        </div>
+    </div>
+    <div class="gs-data-list">
+        <table>
+            <thead>
+            <tr>
+                <th>组名</th>
+                <th>人数</th>
+                <th class="gs-width-1-2">字段</th>
+                <th>操作</th>
+                <th>查看</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>测试</td>
+                <td class="show-num">35979</td>
+                <td class="show-field">手机号,内容,姓名</td>
+                <td>
+                    <a href="#" jsW-open="createPeople" data-id="767">添加联系人</a> |
+                    <a href="#" jsW-open="importGroup" data-id="767" data-name="测试">导入联系人</a> |
+                    <a href="#" jsW-open="createGroup" data-id="767">编辑联系组</a> |
+                    <a href="#" class="del-group" data-id="767">删除联系组</a>
+                </td>
+                <td>
+                    <a href="#" jsW-open="peopleList" data-id="767">查看名单</a>
+                </td>
+            </tr>
+            <tr>
+                <td>测试2</td>
+                <td class="show-num">36</td>
+                <td class="show-field">姓名,性别,电话,邮箱,地址</td>
+                <td>
+                    <a href="#" jsW-open="createPeople" data-id="770">添加联系人</a> |
+                    <a href="#" jsW-open="importGroup" data-id="770" data-name="测试2">导入联系人</a> |
+                    <a href="#" jsW-open="createGroup" data-id="770">编辑联系组</a> |
+                    <a href="#" class="del-group" data-id="770">删除联系组</a>
+                </td>
+                <td>
+                    <a href="#" jsW-open="peopleList" data-id="770">查看名单</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div id="createGroup" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-650">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div id="createGroupTitle" class="gs-modal-title"></div>
+        <div class="gs-modal-content">
+            <form id="createGroupForm" method="post" class="gs-form" style="min-height: 300px; max-height: 500px; overflow: auto;">
+                <div class="gs-form-row">
+                    <label>组名</label>
+                    <div class="gs-form-control">
+                        <input type="text" name="groupName" id="groupName" ver-mode="{notEmpty: true}">
+                        <input type="hidden" name="groupId" id="groupId">
+                        <input type="hidden" name="fieldNameArray" id="fieldNameArray" value="字段一,字段二">
+                        <input type="hidden" name="fieldCodeArray" id="fieldCodeArray" value="field1,field2">
+                    </div>
+                </div>
+                <hr>
+                <div class="gs-data-list">
+                    <table>
+                        <tbody id="existFieldList"></tbody>
+                    </table>
+                </div>
+                <div id="fieldList">
+                    <div class="gs-form-row"><a href="#">添加字段</a></div>
+                </div>
+            </form>
+            <div class="gs-align-center gs-margin-top-10">
+                <a href="#" class="gs-button" jsW-cancel>取消</a>
+                <a href="#" class="gs-button" jsW-submit>确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="createPeople" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-250">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div id="createPeopleTitle" class="gs-modal-title"></div>
+        <div class="gs-modal-content">
+            <form id="createPeopleForm" method="post" class="gs-form gs-margin-left-10" style="max-height: 450px; overflow: auto;"></form>
+            <div class="gs-align-center gs-margin-top-10">
+                <a href="#" class="gs-button" jsW-cancel>取消</a>
+                <a href="#" class="gs-button" jsW-submit>确定</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="peopleList" class="gs-modal" jsW-index="0">
+    <div id="peopleDialog" class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">查看名单</div>
+        <div class="gs-modal-content">
+            <form id="delPeopleForm" method="post" action="data/simpletrue.json">
+                <div class="gs-data-list" style="min-height: 400px; overflow: auto">
+                    <div style="margin:0 auto;">
+                        <table>
+                            <thead id="peopleListHead"></thead>
+                            <tbody id="peopleListContent"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="peopleListPage" class="gs-tool-bar gs-page">
+                </div>
+                <div class="gs-align-center gs-margin-top-10">
+                    <a href="#" class="gs-button" jsW-submit>删除</a>
+                    <a href="#" class="gs-button" jsW-cancel>关闭</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<div id="importGroup" class="gs-modal" jsW-index="1">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsW-cancel>×</div>
+        <div class="gs-modal-title">导入联系组</div>
+        <div class="gs-modal-content">
+            <form id="importGroupForm" class="gs-form" method="post" action="">
+                <div class="gs-form-row">
+                    <label>联系组名</label>
+                    <div class="gs-form-control">
+                        <input id="importName" name="" type="text" ver-mode="{notEmpty:'true'}">
+                        <input id="importGroupId" name="groupId" type="hidden">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>文件导入</label>
+                    <div class="gs-form-control">
+                        <input id="uploadFile" type="file" name="uploadFile">
+                        <a id="uploadGroupBtn" href="#" class="gs-button">上传</a>
+                        <input id="hidFileName" type="hidden" name="">
+                        <div class="gs-form-tip">支持xlsx格式，文件必须包含手机号(Mobile)字段，最多只能自定义10个字段</div>
+                        <div class="gs-form-tip"><a target="_blank" href="#">模板文件</a></div>
+                    </div>
+                </div>
+                <div id="uploadInfo" class="gs-form-row gs-text-success"></div>
+            </form>
+            <div class="gs-align-center gs-margin-top-10">
+                <a href="#" class="gs-button" jsW-submit>添加</a>
+                <a href="#" class="gs-button" jsW-cancel>关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-main="scripts/tongxunlu" src="scripts/require.js"></script>
+</body>
+</html>

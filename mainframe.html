@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>云信平台客服管理中心</title>
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/mainframe.css">
+    <link rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div class="gs-wrapper">
+    <div class="gs-header">
+        <div class="gs-top-logo">
+            <h1>云信平台客服管理中心</h1>
+            <div class="gs-user-info">
+                admin
+                【登录账号：admin | 账号类型：系统管理员】
+            </div>
+        </div>
+        <div class="gs-top-link">
+            <ul class="clearfix">
+                <li><a target="mainFrame" href="homenotice.html">&gt;&gt; 首页</a></li>
+                <li><a href="nlogin.html">&gt;&gt; 安全退出</a></li>
+            </ul>
+            <div class="gs-sys-info"></div>
+        </div>
+    </div>
+    <div class="gs-main gs-main-admin">
+        <div class="gs-aside">
+            <ul class="gs-nav">
+                <li class="gs-parent"><a href="#">发短信</a>
+                    <ul class="gs-sub-nav">
+                        <li><a target="mainFrame" href="individualsend.html">个性化短信</a></li>
+                    </ul>
+                </li>
+                <li class="gs-parent"><a href="#">语音短信</a>
+                    <ul class="gs-sub-nav">
+                        <li><a target="mainFrame" href="voicemsgsend.html">发送语音短信</a></li>
+                    </ul>
+                </li>
+                <li class="gs-parent"><a href="#">备案管理</a>
+                    <ul class="gs-sub-nav">
+                        <li><a target="mainFrame" href="smspatternrecords.html">短信备案</a></li>
+                    </ul>
+                </li>
+                <li class="gs-parent"><a href="#">联系组</a>
+                    <ul class="gs-sub-nav">
+                        <li><a target="mainFrame" href="contactmanager.html">联系组管理</a></li>
+                    </ul>
+                </li>
+                <li class="gs-parent"><a href="#">系统管理</a>
+                    <ul class="gs-sub-nav">
+                        <li><a target="mainFrame" href="downloadmanager.html">导出管理</a></li>
+                        <li><a target="mainFrame" href="usermanager.html">用户管理</a></li>
+                        <li><a target="mainFrame" href="pipesearch.html">通道查询</a></li>
+                        <li><a target="mainFrame" href="menumanager.html">菜单管理</a></li>
+                        <li><a target="mainFrame" href="rolemanager.html">角色管理</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="gs-main-frame">
+            <iframe id="mainFrame" name="mainFrame" frameborder="0" src="homenotice.html"></iframe>
+        </div>
+    </div>
+</div>
+<div class="gs-note-label">
+    <div class="gs-note-tab" data-open="customNote">客户记录</div>
+    <div class="gs-note-tab" data-open="serviceNote">客服备忘录</div>
+</div>
+<div id="customNote" class="gs-note" jsw-index="0">
+    <div class="gs-note-title">客户记录</div>
+    <div class="gs-note-close">隐藏</div>
+    <div class="gs-note-contain" style="width: 310px;">
+        <div class="gs-tool-bar">
+            <label>登录代码：</label>
+            <input id="cnUserCode" type="text" enter-control="{targetBtn:'#cnSearchBtn'}">
+            <a id="cnSearchBtn" class="gs-button" href="#">查找</a>
+        </div>
+        <div class="gs-tool-bar">
+            <div class="gs-tool-item gs-width-4-9">
+                所属销售：<span id="cnSales"></span>
+            </div>
+            <div class="gs-tool-item gs-width-4-9">
+                所属客服：<span id="cnCs"></span>
+            </div>
+        </div>
+        <hr>
+        <h3>重要注意事项：</h3>
+        <ul id="cnHotList" class="gs-text-danger gs-list-point text-overflow"></ul>
+        <hr>
+        <div class="gs-right"></div>
+        <div class="gs-tool-bar">
+            <div class="gs-tool-item">
+                <h3>历史问题处理：</h3>
+            </div>
+            <div class="gs-tool-item-right">
+                <a class="gs-button" href="#" jsw-open="addNote">新增</a>
+            </div>
+        </div>
+        <div class="gs-tool-bar">
+            <select id="historyType">
+                <option>显示全部</option>
+                <option>客服问题</option>
+                <option>客户问题</option>
+                <option>通道问题</option>
+            </select>
+            <input id="historyKeyword" type="text" enter-control="{targetBtn:'#historySearchBtn'}">
+            <a id="historySearchBtn" class="gs-button" href="#">查找</a>
+        </div>
+        <div id="cnHistoryList" class="gs-note-list"></div>
+    </div>
+    <div class="gs-note-bottom-bar">
+        <div id="cnPage" class="gs-left"></div>
+        <div class="gs-right">
+            <a target="mainFrame" href="#">查看全部</a>
+        </div>
+    </div>
+</div>
+<div id="serviceNote" class="gs-note" jsw-index="0">
+    <div class="gs-note-title">客服备忘录</div>
+    <div class="gs-note-close">隐藏</div>
+    <div class="gs-note-contain" style="width: 310px;">
+        <h3>重要事项：</h3>
+        <ul id="csStarList" class="gs-text-danger gs-list-point text-overflow mod-memo-list"></ul>
+        <hr>
+        <h3>注意事项：</h3>
+        <div class="gs-tool-bar">
+            <input id="csKeyword" type="text" enter-control="{targetBtn:'#csSearchBtn'}">
+            <a id="csSearchBtn" class="gs-button" href="#">查找</a>
+            <a class="gs-button" href="#" jsw-open="modMemo">添加</a>
+        </div>
+        <ul id="csMemoList" class="gs-list-point text-overflow mod-memo-list"></ul>
+    </div>
+    <div class="gs-note-bottom-bar">
+        <div id="csPage" class="gs-left"></div>
+        <div class="gs-right">
+            <a target="mainFrame" href="#">查看全部</a>
+        </div>
+    </div>
+</div>
+<div id="modMemo" class="gs-modal" jsw-index="20">
+    <div class="gs-modal-dialog gs-modal-dialog-250">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div class="gs-modal-title">备忘录</div>
+        <div class="gs-modal-content">
+            <form id="modMemoForm" class="gs-form" action="/AdminManager/AddModifyMemoInSupport" method="post">
+                <div class="gs-form-row">
+                    <label>级别：</label>
+                    <div class="gs-form-control">
+                        <select id="memoLevel" name="level" ver-mode="{notEmpty:'true'}">
+                            <option value="3">重要</option>
+                            <option value="2">优先</option>
+                            <option value="1">普通</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <textarea id="memoContent" name="Description" rows="3" class="gs-width-9-10" ver-mode="{notEmpty:'true'}"></textarea>
+                    <input id="memoHidId" name="MemoId" type="hidden">
+                </div>
+                <div class="gs-form-row gs-align-center">
+                    <a href="#" class="gs-button" jsw-submit>确定</a>
+                    <a href="#" class="gs-button" jsw-cancel>取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="addNote" class="gs-modal" jsw-index="20">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div class="gs-modal-title">新增客户记录</div>
+        <div class="gs-modal-content">
+            <form id="addNoteForm" class="gs-form" action="/AdminManager/AddOrModfyMemoInfo" method="post">
+                <div class="gs-form-row">
+                    <div class="gs-form-col">
+                        <div class="gs-form-row">
+                            <label>用户名称：</label>
+                            <div class="gs-form-control-small">
+                                <input id="anUserCode" class="gs-form-small" type="text" enter-control="{targetBtn:'#anUserSearch'}">
+                                <a id="anUserSearch" href="#" class="gs-button">查找</a>
+                            </div>
+                        </div>
+                        <div class="gs-form-row">
+                            <div class="gs-form-control-small">
+                                <select id="anUserSelector" name="UserCode" class="gs-form-medium" size="5" ver-mode="{notEmpty:'true'}"></select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gs-form-col gs-width-1-3 gs-margin-left-10">
+                        <div class="gs-form-row">
+                            <span class="gs-text-danger">1、问题叙述一定要精简，只说要点。</span>
+                        </div>
+                        <div class="gs-form-row">
+                            <span class="gs-text-danger">2、因仅显示前20字，所以关键字要放最前面。</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <div class="gs-form-col">
+                        <div class="gs-form-row">
+                            <label>问题分类：</label>
+                            <div class="gs-form-control-small" ver-mode="{notEmpty:'true'}">
+                                <select name="Category">
+                                    <option>客服问题</option>
+                                    <option>客户问题</option>
+                                    <option>通道问题</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gs-form-col gs-margin-left-10">
+                        <div class="gs-form-row">
+                            <label>级别：</label>
+                            <div class="gs-form-control-mini">
+                                <select name="Level" class="gs-form-little" ver-mode="{notEmpty:'true'}">
+                                    <option value="3">重要</option>
+                                    <option value="2">优先</option>
+                                    <option value="1">普通</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <textarea id="noteContent" name="Description" rows="5" class="gs-width-9-10" ver-mode="{notEmpty:'true'}"></textarea>
+                </div>
+                <div class="gs-form-row gs-align-center">
+                    <a href="#" class="gs-button" jsw-submit>确定</a>
+                    <a href="#" class="gs-button" jsw-cancel>取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="mainTips">
+    <div class="gs-note-title">提示：</div>
+    <ul id="tipsList" class="gs-margin-left-10"></ul>
+</div>
+<script data-main="scripts/main" src="scripts/require.js"></script>
+</body>
+</html>

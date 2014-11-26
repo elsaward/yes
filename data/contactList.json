@@ -1,0 +1,37 @@
+{
+    "ContactList":{
+        "FieldList":[
+            {"FieldId":3854,"FieldName":"姓名","FieldCode":"Name_","FieldIndex":"0"},
+            {"FieldId":3855,"FieldName":"性别","FieldCode":"Gender_","FieldIndex":"1"},
+            {"FieldId":3856,"FieldName":"电话","FieldCode":"Mobile_","FieldIndex":"2"},
+            {"FieldId":3857,"FieldName":"邮箱","FieldCode":"Email_","FieldIndex":"3"},
+            {"FieldId":3858,"FieldName":"地址","FieldCode":"Address_","FieldIndex":"4"}
+        ],
+        "InfoList":[
+            {"Id":36026,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36025,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36024,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36023,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36022,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36021,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36020,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36019,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36018,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36017,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36016,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36015,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36014,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36013,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36012,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36011,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36010,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36009,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36008,"UserCode":"Admin","GroupId":770,"Field0":"李四","Field1":"女","Field2":"15001010101","Field3":"123@qq.com","Field4":"斜土路70号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""},
+            {"Id":36007,"UserCode":"Admin","GroupId":770,"Field0":"张三","Field1":"男","Field2":"15000000000","Field3":"123@qq.com","Field4":"斜土路75号","Field5":"","Field6":"","Field7":"","Field8":"","Field9":""}
+        ]
+    },
+    "Amount":2,
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

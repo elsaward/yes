@@ -1,0 +1,14 @@
+{
+    "InfoList":[
+        {"Id":"1","UserCode":"user1","UserName":"用户1"},
+        {"Id":"2","UserCode":"user2","UserName":"用户2"},
+        {"Id":"3","UserCode":"user3","UserName":"用户3"},
+        {"Id":"4","UserCode":"user4","UserName":"用户4"},
+        {"Id":"5","UserCode":"user5","UserName":"用户5"},
+        {"Id":"6","UserCode":"user6","UserName":"用户6"},
+        {"Id":"7","UserCode":"user7","UserName":"用户7"}
+    ],
+    "Amount":3,
+    "Code":10,
+    "Description":"请求成功"
+}

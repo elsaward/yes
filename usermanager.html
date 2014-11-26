@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>云信平台</title>
+    <link rel="stylesheet" href="content/css/main.css">
+    <link rel="stylesheet" href="content/css/verify.css">
+</head>
+<body>
+<div class="gs-side-bar">
+    <div class="gs-tool-bar">
+        <div class="gs-tool-item">
+            <a id="createUserBtn" class="gs-button" href="#">新增</a>
+        </div>
+        <div class="gs-tool-item">
+            <input id="searchTxt" type="text" class="gs-input-mini">
+            <a id="searchBtn" class="gs-button" href="#">查找</a>
+        </div>
+    </div>
+    <div class="gs-tool-bar gs-width-9-10">
+        <a class="search-letter" href="#">#</a>
+        <a class="search-letter" href="#">A</a>
+        <a class="search-letter" href="#">B</a>
+        <a class="search-letter" href="#">C</a>
+        <a class="search-letter" href="#">D</a>
+        <a class="search-letter" href="#">E</a>
+        <a class="search-letter" href="#">F</a>
+        <a class="search-letter" href="#">G</a>
+        <a class="search-letter" href="#">H</a>
+        <a class="search-letter" href="#">I</a>
+        <a class="search-letter" href="#">J</a>
+        <a class="search-letter" href="#">K</a>
+        <a class="search-letter" href="#">L</a>
+        <a class="search-letter" href="#">M</a>
+        <a class="search-letter" href="#">N</a>
+        <a class="search-letter" href="#">O</a>
+        <a class="search-letter" href="#">P</a>
+        <a class="search-letter" href="#">Q</a>
+        <a class="search-letter" href="#">R</a>
+        <a class="search-letter" href="#">S</a>
+        <a class="search-letter" href="#">T</a>
+        <a class="search-letter" href="#">U</a>
+        <a class="search-letter" href="#">V</a>
+        <a class="search-letter" href="#">W</a>
+        <a class="search-letter" href="#">X</a>
+        <a class="search-letter" href="#">Y</a>
+        <a class="search-letter" href="#">Z</a>
+    </div>
+    <ul id="userList" class="gs-tree" style="position: absolute; top: 80px; bottom: 0; left: 0; right: 0"></ul>
+</div>
+<div class="gs-wide-content">
+<div id="main" class="gs-main-contain" jsw-index="0">
+<form id="mainForm" class="gs-form" action="" method="post">
+<h2>用户基本信息</h2>
+<hr>
+<div id="infoForm">
+    <div class="gs-form-row">
+        <label>用户名称：</label>
+        <div class="gs-form-control">
+            <input id="UserName" name="UserName" type="text" ver-mode="{notEmpty:'true',maxLength:10}">
+            <span class="gs-form-tip">10字符以内</span>
+            <input id="UserID" name="UserID" type="hidden">
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <label>登录代码：</label>
+        <div class="gs-form-control">
+            <input id="UserCode" name="UserCode" class="get-top-note" type="text" ver-mode="{notEmpty:'true',pattern:'/^\\w{4,10}$/'}">
+            <span class="gs-form-tip">4-10字以内，大小写英文、数字及下划线组合，注册后不可修改</span>
+        </div>
+    </div>
+    <div class="gs-form-row clearfix">
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>用户密码：</label>
+                <div class="gs-form-control">
+                    <a id="resetPWBtn" class="gs-button" href="#">重置</a>
+                    <span class="gs-form-tip">自动生成</span>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>用户邮箱：</label>
+                <div class="gs-form-control">
+                    <input id="Email" name="Email" type="text" ver-mode="{notEmpty:'true',pattern:'/^\\w+((-\\w+)|(\\.\\w+))*\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$/'}">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>用户状态：</label>
+                <div class="gs-form-control">
+                    <select id="Valid" name="Valid">
+                        <option value="1">正常</option>
+                        <option value="0">冻结</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>付费类型：</label>
+                <div class="gs-form-control">
+                    <select id="UserPayType" name="UserPayType">
+                        <option value="0">预充值</option>
+                        <option value="1">后付款</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>计费方式：</label>
+                <div class="gs-form-control">
+                    <select id="IsSuccCharge" name="IsSuccCharge">
+                        <option value="0">提交成功</option>
+                        <option value="1">发送成功</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>用户手机：</label>
+                <div class="gs-form-control">
+                    <input id="Mobile" name="Mobile" type="text" ver-mode="{notEmpty:'true',pattern:'/^[0-9]{11}$/'}">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>所属销售：</label>
+                <div class="gs-form-control">
+                    <input id="BelongToSales" name="BelongToSales" type="text">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>所属客服：</label>
+                <div class="gs-form-control">
+                    <input id="BelongToSupport" name="BelongToSupport" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <label>有效日期：</label>
+        <div class="gs-form-control">
+            <input id="Expiration" name="Expiration" type="text" readonly>
+            <span class="gs-form-tip">测试账号1个月，充值延长6个月</span>
+        </div>
+    </div>
+    <div class="gs-form-row">
+        <label>客户行业：</label>
+        <div class="gs-form-control">
+            <label><input name="Industry" type="checkbox" value="电子商务">电子商务</label>
+            <label><input name="Industry" type="checkbox" value="商超连锁">商超连锁</label>
+            <label><input name="Industry" type="checkbox" value="房地产类">房地产类</label>
+            <label><input name="Industry" type="checkbox" value="教育行业">教育行业</label>
+            <label><input name="Industry" type="checkbox" value="金融行业">金融行业</label>
+            <label><input name="Industry" type="checkbox" value="建材家居">建材家居</label>
+            <label><input name="Industry" type="checkbox" value="医疗美容">医疗美容</label>
+            <label><input name="Industry" type="checkbox" value="餐饮行业">餐饮行业</label>
+            <label><input name="Industry" type="checkbox" value="信息咨询">信息咨询</label>
+            <label><input name="Industry" type="checkbox" value="酒店旅游">酒店旅游</label>
+            <label><input name="Industry" type="checkbox" value="其他行业">其他行业</label>
+        </div>
+    </div>
+    <div class="gs-tool-bar">
+        <div class="gs-tool-item-right">
+            <a id="btnSaveInfo" class="gs-button edit-btn" href="#" style="display: none;">保存信息</a>
+        </div>
+    </div>
+</div>
+<h2>用户属性</h2>
+<hr>
+<div id="settingForm">
+    <div class="gs-form-row clearfix">
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>测试记录：</label>
+                <div class="gs-form-control">
+                    <select id="IsMust" name="IsMust">
+                        <option value="1">记录</option>
+                        <option value="0">不记录</option>
+                        <option value="2">白名单有效不单发</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>失败基数：</label>
+                <div class="gs-form-control">
+                    <input id="CutBase" name="CutBase" type="text" ver-mode="{notEmpty:'true',pattern:'/^[0-9]+$/'}">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>移动扩展号：</label>
+                <div class="gs-form-control">
+                    <input id="UserExt" name="UserExt" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>记录基数：</label>
+                <div class="gs-form-control">
+                    <input id="MustNumber" name="MustNumber" type="text" ver-mode="{pattern:'/^[0-9]+$/'}">
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>失败率：</label>
+                <div class="gs-form-control">
+                    <input id="CutPercent" name="CutPercent" class="gs-form-small" type="text" ver-mode="{notEmpty:'true',pattern:'/^(100|[1-9][0-9]|[0-9])$/'}"> %
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>联通扩展号：</label>
+                <div class="gs-form-control">
+                    <input id="UserExtLT" name="UserExtLT" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>审核方式：</label>
+                <div class="gs-form-control">
+                    <select id="IsAuto" name="IsAuto">
+                        <option value="1">需要审核</option>
+                        <option value="0">无须审核</option>
+                        <option value="2">强制审核</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>用户优先级：</label>
+                <div class="gs-form-control">
+                    <input id="OrderLevel" name="OrderLevel" type="text" value="0" ver-mode="{pattern:'/^[0-9]+$/'}">
+                    <span class="gs-form-tip">数字越大越优先</span>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>电信扩展号：</label>
+                <div class="gs-form-control">
+                    <input id="UserExtDX" name="UserExtDX" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gs-form-row clearfix">
+        <div class="gs-form-col">
+            <div class="gs-form-row">
+                <label>回执状态：</label>
+                <div class="gs-form-control">
+                    <select id="IsStatus" name="IsStatus" class="gs-form-small">
+                        <option value="0">无</option>
+                        <option value="1">有</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col gs-margin-left-20">
+            <div class="gs-form-row">
+                <label>回执推送地址：</label>
+                <div class="gs-form-control-medium">
+                    <input id="PushRepUrl" name="PushRepUrl" class="gs-form-medium" type="text" disabled>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label>回复推送地址：</label>
+                <div class="gs-form-control-medium">
+                    <input id="PushMOUrl" name="PushMOUrl" class="gs-form-medium" type="text">
+                </div>
+            </div>
+        </div>
+        <div class="gs-form-col gs-margin-left-20">
+            <div class="gs-form-row">
+                <label><input id="IsBoundIP" name="IsBoundIP" type="checkbox"> IP地址绑定：</label>
+                <div class="gs-form-control-medium">
+                    <input id="RestrictIp" name="RestrictIp" type="text" disabled>
+                    <span class="gs-form-tip">多个IP之间用英文逗号","分开，仅对web端登录时生效</span>
+                </div>
+            </div>
+            <div class="gs-form-row">
+                <label><input id="IsIdentify" name="IsIdentify" type="checkbox"> 短信验证：</label>
+                <div class="gs-form-control-medium">
+                    <input id="RestrictIdentifyPhone" name="RestrictIdentifyPhone" type="text" disabled ver-mode="{pattern:'/^[0-9]{11}$/'}">
+                    <span class="gs-form-tip">仅对web端登录时生效</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="gs-tool-bar">
+        <div class="gs-tool-item-right">
+            <a id="btnSaveSetting" class="gs-button edit-btn" href="#" style="display: none;">保存信息</a>
+        </div>
+    </div>
+</div>
+<h2>通道配置</h2>
+<hr>
+<div class="gs-data-list">
+    <div id="defaultSet">
+        <div class="gs-tool-bar gs-text-danger">默认通道：（可在新建后修改）</div>
+        <div class="gs-tool-bar">
+            <div class="gs-tool-item">名称：<span class="gs-text-success">通道1</span></div>
+            <div class="gs-tool-item">类型：<span class="gs-text-success">短信</span></div>
+            <div class="gs-tool-item">详情：<span class="gs-text-success">联通1,移动1,电信1</span></div>
+            <div class="gs-tool-item">时间段：<span class="gs-text-success">00:00 - 00:00</span></div>
+        </div>
+        <div class="gs-tool-bar">
+            <div class="gs-tool-item">名称：<span class="gs-text-success">通道2</span></div>
+            <div class="gs-tool-item">类型：<span class="gs-text-success">语音</span></div>
+            <div class="gs-tool-item">详情：<span class="gs-text-success">联通2,移动2,电信2</span></div>
+            <div class="gs-tool-item">时间段：<span class="gs-text-success">00:00 - 00:00</span></div>
+        </div>
+    </div>
+    <table id="pipeTable" style="display: none;">
+        <thead>
+        <tr>
+            <th><input type="checkbox" id="selAll"></th>
+            <th>编号</th>
+            <th>类型</th>
+            <th>通道名称</th>
+            <th>基础组合通道</th>
+            <th>通道详情</th>
+            <th>时间段</th>
+            <th>单价</th>
+            <th>销售费用</th>
+            <th>实际单价</th>
+            <th>参考失败率</th>
+        </tr>
+        </thead>
+        <tbody id="pipeList"></tbody>
+    </table>
+</div>
+<div class="gs-tool-bar">
+    <div class="gs-tool-item-right">
+        <a class="gs-button edit-btn" href="#" jsw-open="pipeMod" style="display: none;">添加</a>
+        <a id="delPipes" class="gs-button edit-btn" href="#" style="display: none;">删除</a>
+    </div>
+</div>
+<h2>用户权限
+    <select id="UserType" name="UserType" class="gs-text-12" ver-mode="{notEmpty:'true'}">
+        <option value="1">测试用户</option>
+        <option value="2">短信用户</option>
+        <option value="3">代理商</option>
+        <option value="4">系统管理员</option>
+    </select>
+</h2>
+<hr>
+<div class="gs-data-list">
+    <table class="gs-align-left">
+        <thead>
+        <tr>
+            <th class="gs-width-1-5">权限模块</th>
+            <th>权限明细</th>
+        </tr>
+        </thead>
+        <tbody id="menuList"></tbody>
+    </table>
+</div>
+<div class="gs-tool-bar">
+    <div class="gs-tool-item-right">
+        <a id="btnSaveMenu" class="gs-button edit-btn" href="#" style="display: none;">保存权限</a>
+    </div>
+</div>
+<div style="height: 50px;"></div>
+</form>
+</div>
+</div>
+<div class="gs-tool-bar" style="position: fixed; padding:10px 0; bottom:0; left: 240px; right: 20px; background: #fff;">
+    <a id="btnSaveAll" class="gs-button gs-button-danger" href="#">新增用户</a>
+    <a id="btnUserDetail" class="gs-button gs-button-danger" href="#">账户明细</a>
+    <a id="btnLoginUser" class="gs-button gs-button-danger" href="#">进入用户</a>
+</div>
+<div id="pwSend" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div id="pwSendTitle" class="gs-modal-title"></div>
+        <div class="gs-modal-content">
+            <p id="pwSendMsg" class="gs-margin-top-15"></p>
+            <form class="gs-form gs-margin-top-15">
+                <div class="gs-form-row">
+                    <label>手机号：</label>
+                    <div class="gs-form-control">
+                        <input id="pwMobile" type="text">
+                        <input id="pwMsg" type="hidden">
+                        <a class="gs-button" href="#" jsw-submit>发送</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="pipeMod" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div id="pipeModTitle" class="gs-modal-title"></div>
+        <div class="gs-modal-content">
+            <form class="gs-form" id="pipeModForm" action="" method="post">
+                <div class="gs-form-row">
+                    <label>通道名称：</label>
+                    <div class="gs-form-control-medium">
+                        <input id="setName" name="Alias" class="gs-form-medium" type="text" ver-mode="{notEmpty:'true'}">
+                        <input id="setId" name="UserPipeSetId" type="hidden" value="10">
+                        <input id="setUserId" name="UserID" type="hidden" value="" ver-mode="{notEmpty:'true'}">
+                        <input id="userPipeId" type="hidden" value="50">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>组合通道：</label>
+                    <div class="gs-form-control-medium">
+                        <select id="baseSets" name="PipeSetId" class="gs-form-medium" ver-mode="{notEmpty:'true'}"></select>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>通道类型：</label>
+                    <div class="gs-form-control-medium">
+                        <span class="base-set-info" data-for="UseTypeText"></span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>基础通道：</label>
+                    <div class="gs-form-control-medium">
+                        <span class="base-set-info" data-for="BasePipeName"></span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>发送时间：</label>
+                    <div class="gs-form-control-medium">
+                        <span class="base-set-info" data-for="UserOpenTime"></span>
+                        -
+                        <span class="base-set-info" data-for="UserCloseTime"></span>
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>单价：</label>
+                    <div class="gs-form-control-medium">
+                        <input id="unitPrice" name="UnitPrice" type="text" value="0" ver-mode="{notEmpty:'true',pattern:'/^\\d{0,8}\.{0,1}(\\d{1,4})?$/'}">
+                    </div>
+                </div>
+                <div class="gs-form-row">
+                    <label>销售费用：</label>
+                    <div class="gs-form-control-medium">
+                        <input id="salesFee" name="PRFee" type="text" value="0" ver-mode="{notEmpty:'true',pattern:'/^\\d{0,8}\.{0,1}(\\d{1,4})?$/'}">
+                    </div>
+                </div>
+                <div class="gs-modal-control">
+                    <a href="#" jsw-submit>确认</a>
+                    <a href="#" jsw-cancel>取消</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="pipeDetail" class="gs-modal" jsw-index="1">
+    <div class="gs-modal-dialog gs-modal-dialog-550">
+        <div class="gs-close" jsw-cancel>×</div>
+        <div class="gs-modal-title">通道详情</div>
+        <div class="gs-modal-content">
+            <div class="gs-data-list">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>运营商</th>
+                        <th>基础通道</th>
+                        <th>数量限制</th>
+                        <th>地区限制</th>
+                        <th>字符限制</th>
+                    </tr>
+                    </thead>
+                    <tbody id="pipeInfoList"></tbody>
+                </table>
+            </div>
+            <div class="gs-tool-bar">
+                <p id="pipeInfoMsg" class="gs-text-success"></p>
+            </div>
+            <div class="gs-modal-control">
+                <a href="#" jsw-cancel>关闭</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-main="scripts/userdetail" src="scripts/require.js"></script>
+</body>
+</html>

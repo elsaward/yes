@@ -1,0 +1,43 @@
+{
+    "InfoList":[
+        {
+            "TaskID":"1",
+            "TaskBuilder":"Admin",
+            "TaskTitle":"发件箱1",
+            "CommandType":0,
+            "StatusText":"已完成",
+            "Created":"2014-10-09 12:34:34",
+            "FileName":"<a href=\"\" target=\"_blank\">141009123551412.zip</a>"
+        },
+        {
+            "TaskID":"2",
+            "TaskBuilder":"Admin",
+            "TaskTitle":"收件箱1",
+            "CommandType":0,
+            "StatusText":"已完成",
+            "Created":"2014-10-09 12:34:34",
+            "FileName":"<a href=\"\" target=\"_blank\">141009123551412.zip</a>"
+        },
+        {
+            "TaskID":"3",
+            "TaskBuilder":"Admin",
+            "TaskTitle":"下发记录1",
+            "CommandType":0,
+            "StatusText":"已完成",
+            "Created":"2014-10-09 12:34:34",
+            "FileName":"<a href=\"\" target=\"_blank\">141009123551412.zip</a>"
+        },
+        {
+            "TaskID":"4",
+            "TaskBuilder":"Admin",
+            "TaskTitle":"语音回拨记录1",
+            "CommandType":0,
+            "StatusText":"已完成",
+            "Created":"2014-10-09 12:34:34",
+            "FileName":"<a href=\"\" target=\"_blank\">141009123551412.zip</a>"
+        }
+    ],
+    "Amount":3,
+    "Code":10,
+    "Description":"请求成功"
+}

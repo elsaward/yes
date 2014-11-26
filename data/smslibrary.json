@@ -1,0 +1,11 @@
+{
+    "InfoList":[
+        {"SLGid":4,"GName":"常用短信1"},
+        {"SLGid":5,"GName":"常用短信2"},
+        {"SLGid":6,"GName":"常用短信3"},
+        {"SLGid":7,"GName":"常用短信4"}
+    ],
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

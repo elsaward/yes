@@ -1,0 +1,22 @@
+{
+    "ImportantMemoTop":[
+        {
+            "Id":85,
+            "Level":3,
+            "LevelString":"重要",
+            "Recorder":"Admin",
+            "CreatedString":"2014/9/23 14:58:51",
+            "UserCode":"Admin",
+            "Description":"问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题问题",
+            "MemoType":0,"Category":"客服问题",
+            "BelongToSales":null,
+            "BelongToSupport":null
+        }
+    ],
+    "BelongToSales":"tee",
+    "BelongToSupport":"",
+    "UserCode":"Admin",
+    "Code":10,
+    "Description":"请求成功",
+    "RedirectUrl":null
+}

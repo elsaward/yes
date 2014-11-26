@@ -1,0 +1,328 @@
+@charset "UTF-8";
+html {
+  background: #e7e7e7;
+  color: #303030;
+  line-height: 24px;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif; }
+
+body {
+  font-size: 14px; }
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+form,
+input,
+textarea,
+p {
+  margin: 0;
+  padding: 0; }
+
+img {
+  display: inline-block;
+  border: 0;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  vertical-align: top; }
+
+ul {
+  list-style: none; }
+
+h1 {
+  text-align: center;
+  margin: 35px 0 40px 0;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "微软雅黑";
+  color: black;
+  font-size: 25px;
+  font-weight: normal; }
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: inherit; }
+
+input + input {
+  margin-left: 5px; }
+
+/*to enable resizing for IE */
+input,
+textarea,
+select {
+  *font-size: 100%; }
+
+hr {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid #c6d2f5;
+  moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+a {
+  color: #3366cc;
+  text-decoration: none; }
+
+a:hover {
+  color: #6688cc;
+  text-decoration: none; }
+
+* + p,
+p + div {
+  margin-top: 10px; }
+
+/* float */
+.gs-left {
+  float: left !important; }
+
+.gs-right {
+  float: right !important; }
+
+/* clearfix */
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: " ";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+.gs-text-f12 {
+  font-size: 12px; }
+
+.gs-text-danger {
+  color: #c10f21; }
+
+/* form */
+.gs-form .gs-form-row {
+  clear: left; }
+  .gs-form .gs-form-row > label {
+    float: left; }
+  .gs-form .gs-form-row > .gs-form-control {
+    margin-left: 60px; }
+.gs-form * + .gs-form-row {
+  margin-top: 15px; }
+.gs-form .gs-form-small {
+  width: 40px; }
+
+input[type=text],
+input[type=password] {
+  box-sizing: content-box;
+  padding: 2px;
+  width: 90%;
+  height: 18px;
+  border: 1px solid #cccccc; }
+
+input {
+  transition: all 0.2s linear; }
+  input:focus {
+    border: 1px solid #3366cc;
+    outline: none;
+    -moz-box-shadow: 0 0 5px #aaccff;
+    -webkit-box-shadow: 0 0 5px #aaccff;
+    box-shadow: 0 0 5px #aaccff; }
+
+a.gs-login-button {
+  position: relative;
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 0 #c34100;
+  display: inline-block;
+  padding: 8px 25px;
+  border: 1px solid #f19500;
+  border-radius: 5px;
+  background-color: #f19500;
+  background-image: -moz-linear-gradient(90deg, #ee7a00 0%, #f8ca00 100%);
+  background-image: -webkit-linear-gradient(90deg, #ee7a00 0%, #f8ca00 100%);
+  background-image: -ms-linear-gradient(90deg, #ee7a00 0%, #f8ca00 100%);
+  -moz-box-shadow: 0px 1px 0px #e95600;
+  -webkit-box-shadow: 0px 1px 0px #e95600;
+  box-shadow: 0px 1px 0px #e95600;
+  cursor: pointer; }
+  a.gs-login-button:hover {
+    display: inline-block;
+    padding: 8px 25px;
+    border: 1px solid #f19500;
+    border-radius: 5px;
+    background-color: #f17800;
+    background-image: -moz-linear-gradient(90deg, #ee5b00 0%, #f9ae00 100%);
+    background-image: -webkit-linear-gradient(90deg, #ee5b00 0%, #f9ae00 100%);
+    background-image: -ms-linear-gradient(90deg, #ee5b00 0%, #f9ae00 100%);
+    -moz-box-shadow: 0px 1px 0px #e95600;
+    -webkit-box-shadow: 0px 1px 0px #e95600;
+    box-shadow: 0px 1px 0px #e95600; }
+  a.gs-login-button:before {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 14px;
+    right: 20px;
+    border-style: solid;
+    border-width: 7px 0 7px 6px;
+    border-color: transparent transparent transparent #c34100;
+    content: ""; }
+  a.gs-login-button:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    top: 13px;
+    right: 20px;
+    border-style: solid;
+    border-width: 7px 0 7px 6px;
+    border-color: transparent transparent transparent white;
+    content: ""; }
+
+/* header */
+.header {
+  position: absolute;
+  top: 3%;
+  right: 20px;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "微软雅黑"; }
+
+/* login */
+h1 {
+  letter-spacing: 5px; }
+
+.gs-login {
+  position: relative;
+  margin: 0 auto;
+  padding-top: 150px;
+  width: 1000px;
+  height: 320px; }
+  .gs-login .gs-login-belt {
+    position: relative;
+    float: left;
+    width: 50%; }
+    .gs-login .gs-login-belt > div {
+      position: absolute; }
+  .gs-login .gs-login-left {
+    top: 0;
+    right: 140px; }
+  .gs-login .gs-login-right {
+    top: 0;
+    left: 140px; }
+  .gs-login .gs-login-center {
+    position: absolute;
+    top: 150px;
+    left: 360px;
+    width: 220px;
+    height: 320px;
+    padding: 0 30px;
+    background: url("../images/bg_m.gif") center repeat-x; }
+  .gs-login .gs-login-belt-left {
+    height: 320px;
+    background: url("../images/bg_l.gif") center repeat-x; }
+    .gs-login .gs-login-belt-left:before {
+      position: absolute;
+      left: 0;
+      width: 3px;
+      height: 320px;
+      background: url("../images/y_l.gif") no-repeat;
+      content: ""; }
+  .gs-login .gs-login-belt-right {
+    height: 320px;
+    background: url("../images/bg_r.gif") center repeat-x; }
+    .gs-login .gs-login-belt-right:after {
+      z-index: 9;
+      position: absolute;
+      right: 0;
+      width: 3px;
+      height: 320px;
+      background: url("../images/y_r.gif") no-repeat;
+      content: ""; }
+
+/* footer */
+.footer {
+  position: absolute;
+  width: 99%;
+  bottom: 3%;
+  text-align: center;
+  font-family: "Microsoft Yahei", Arial, Helvetica, sans-serif, "微软雅黑";
+  color: #666666; }
+
+/* jsw */
+.gs-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999; }
+
+.gs-modal-dialog {
+  position: relative;
+  width: 250px; }
+  .gs-modal-dialog .gs-close {
+    top: 2px;
+    right: 4px;
+    color: white; }
+  .gs-modal-dialog .gs-modal-title {
+    padding: 2px 10px;
+    background: #6688cc;
+    color: white; }
+    .gs-modal-dialog .gs-modal-title h3 {
+      color: white; }
+  .gs-modal-dialog .gs-modal-content {
+    background: white;
+    padding: 10px; }
+  .gs-modal-dialog .gs-modal-answer {
+    padding: 4px 0;
+    width: 100%; }
+  .gs-modal-dialog .gs-modal-control {
+    margin-top: 10px;
+    text-align: center; }
+    .gs-modal-dialog .gs-modal-control > a {
+      display: inline-block;
+      padding: 1px 10px;
+      margin: 5px;
+      border: 1px solid #3366cc;
+      color: black; }
+
+.gs-box-mask,
+.gs-modal-mask {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+  filter: progid:DXImageTransform.Microsoft.gradient(startcolorstr=#20000000,endcolorstr=#20000000) \9; }
+
+.gs-modal-mask .gs-modal-dialog {
+  margin: 15% auto; }
+
+.gs-open {
+  display: block; }
+
+.gs-close {
+  position: absolute;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold; }
+
+.gs-disabled-button,
+.gs-disabled-button:hover {
+  border: 1px solid #bbbbbb;
+  color: #bbbbbb;
+  background: #dddddd; }
+
+.gs-button {
+  display: inline-block;
+  padding: 3px 20px;
+  line-height: 16px;
+  border: 1px solid #6688cc;
+  color: #303030;
+  background: #ecedff;
+  cursor: pointer; }

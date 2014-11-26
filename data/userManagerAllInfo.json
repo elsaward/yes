@@ -1,0 +1,96 @@
+{
+    "UserPipeSetInfoList": [
+        {
+            "UserPipeID": 2,
+            "PipeSetID": 22,
+            "SetName": "通道2",
+            "UserOpenTime": "07:00",
+            "UserCloseTime": "18:00",
+            "UseTypeText": "短信",
+            "BasePipeName": "移动2,联通2,电信2",
+            "UnitPrice": 0.1000,
+            "PRFee": "0",
+            "Alias": "用户通道1",
+            "BasePipeSetID": 0,
+            "PipeSetType": 1
+        }
+    ],
+    "UserBindIPList": [],
+    "UserBindIPString": "",
+    "RoleUserMenu": {
+        "SmsWebMenu": [
+            {
+                "Id": 1,
+                "MenuName": "菜单1",
+                "MenuUrl": "",
+                "ParentId": 0,
+                "OrderByVal": 0
+            },
+            {
+                "Id": 2,
+                "MenuName": "菜单2",
+                "MenuUrl": "",
+                "ParentId": 0,
+                "OrderByVal": 0
+            },
+            {
+                "Id": 3,
+                "MenuName": "菜单3",
+                "MenuUrl": "",
+                "ParentId": 1,
+                "OrderByVal": 0
+            },
+            {
+                "Id": 4,
+                "MenuName": "菜单4",
+                "MenuUrl": "",
+                "ParentId": 2,
+                "OrderByVal": 0
+            },
+            {
+                "Id": 5,
+                "MenuName": "菜单5",
+                "MenuUrl": "",
+                "ParentId": 1,
+                "OrderByVal": 0
+            },
+            {
+                "Id": 6,
+                "MenuName": "菜单6",
+                "MenuUrl": "",
+                "ParentId": 2,
+                "OrderByVal": 0
+            }
+        ],
+        "DefaultIds": [1, 2, 3, 5]
+    },
+    "UserInfo": {
+        "id": 1,
+        "UserName": "admin",
+        "UserCode": "Admin",
+        "Mobile": "13817392388",
+        "Email": "123@qq.com",
+        "Valid": 1,
+        "UserType": 4,
+        "isAuto": 1,
+        "isMust": 0,
+        "mustNumber": 50,
+        "isStatus": 0,
+        "isSuccCharge": 0,
+        "cutBase": 100,
+        "cutPercent": 10,
+        "userExt": "8888",
+        "userBelongTo": "tee",
+        "OrderLevel": 1,
+        "IsIdentify": 0,
+        "RestrictIdentifyPhone": "",
+        "userExtLT": "8888",
+        "userExtDX": "8888",
+        "UserPayType": 0,
+        "PushRepUrl": "",
+        "PushMOUrl": "",
+        "Industry": "电子商务,商超连锁,房地产类,教育行业,金融行业,建材家居",
+        "ExpiryString": "2014-09-01 00:00:00",
+        "BelongToSupport": ""
+    }
+}

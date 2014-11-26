@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>角色列表</title>
+    <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="content/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="content/css/verify.css" />
+</head>
+<body>
+<div class="gs-main-contain">
+    <h2>角色列表</h2>
+    <hr>
+    <div class="gs-side-bar" style="top: 40px;">
+        <ul id="roleList" class="gs-tree"></ul>
+    </div>
+    <div class="gs-wide-content" style="top: 40px;">
+    <form id="roleForm" class="gs-form">
+        <div class="gs-form-row">
+            <label for="roleId">ID：</label>
+            <div class="gs-form-control">
+                <input id="roleId" type="text">
+                <input id="oldRoldId" type="hidden">
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <label for="roleName">名称：</label>
+            <div class="gs-form-control">
+                <input id="roleName" type="text" ver-mode="{notEmpty: 'true'}">
+            </div>
+        </div>
+        <div class="gs-form-row">
+            <label>权限：</label>
+            <div class="gs-form-control">
+                <div>
+                    <label class="check-box-example check-box-blue"></label>
+                    代表该角色可选择的权限范围
+                    <label class="check-box-example check-box-red"></label>
+                    代表该角色默认选中的权限（需小于权限范围）
+                </div>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="7" data-parent="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="7" data-parent="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发短信</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="38" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="38" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发短信</span>
+                        <label class="check-box check-box-blue">
+                            <input value="41" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="41" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>个性化发送</span>
+                        <label class="check-box check-box-blue">
+                            <input value="42" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="42" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>个性化发送(新)</span>
+                        <label class="check-box check-box-blue">
+                            <input value="39" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="39" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发件箱</span>
+                        <label class="check-box check-box-blue">
+                            <input value="43" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="43" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>收件箱</span>
+                        <label class="check-box check-box-blue">
+                            <input value="44" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="44" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>下发记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="37" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="37" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>导出管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="47" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="47" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>循环短信管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="40" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="40" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送报告</span>
+                        <label class="check-box check-box-blue">
+                            <input value="45" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="45" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>循环短息</span>
+                        <label class="check-box check-box-blue">
+                            <input value="46" data-sel="menu-7" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="46" data-sel="default-7" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>循环短信</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="1" data-parent="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="1" data-parent="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>12114管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="23" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="23" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>所有活动</span>
+                        <label class="check-box check-box-blue">
+                            <input value="19" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="19" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>活动发起</span>
+                        <label class="check-box check-box-blue">
+                            <input value="20" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="20" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>活动权限</span>
+                        <label class="check-box check-box-blue">
+                            <input value="22" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="22" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>全局统计</span>
+                        <label class="check-box check-box-blue">
+                            <input value="21" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="21" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>活动统计</span>
+                        <label class="check-box check-box-blue">
+                            <input value="18" data-sel="menu-1" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="18" data-sel="default-1" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>个性化内容</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="15" data-parent="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="15" data-parent="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音短信</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="92" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="92" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送语音短信</span>
+                        <label class="check-box check-box-blue">
+                            <input value="95" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="95" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音发件箱</span>
+                        <label class="check-box check-box-blue">
+                            <input value="97" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="97" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音外呼记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="96" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="96" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音回拨记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="98" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="98" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音文件管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="94" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="94" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音短信号码管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="93" data-sel="menu-15" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="93" data-sel="default-15" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>语音短信发送配置管理</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="3" data-parent="menu-3" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="3" data-parent="default-3" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>备案管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="28" data-sel="menu-3" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="28" data-sel="default-3" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>模板测试</span>
+                        <label class="check-box check-box-blue">
+                            <input value="26" data-sel="menu-3" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="26" data-sel="default-3" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>备案批量转移</span>
+                        <label class="check-box check-box-blue">
+                            <input value="27" data-sel="menu-3" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="27" data-sel="default-3" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>短信备案</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="6" data-parent="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="6" data-parent="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发彩信</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="34" data-sel="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="34" data-sel="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发彩信</span>
+                        <label class="check-box check-box-blue">
+                            <input value="33" data-sel="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="33" data-sel="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>彩信制作</span>
+                        <label class="check-box check-box-blue">
+                            <input value="32" data-sel="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="32" data-sel="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>彩信管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="35" data-sel="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="35" data-sel="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发件箱</span>
+                        <label class="check-box check-box-blue">
+                            <input value="36" data-sel="menu-6" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="36" data-sel="default-6" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>下发记录</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="4" data-parent="menu-4" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="4" data-parent="default-4" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>短信回复</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="30" data-sel="menu-4" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="30" data-sel="default-4" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>回复设置</span>
+                        <label class="check-box check-box-blue">
+                            <input value="29" data-sel="menu-4" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="29" data-sel="default-4" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>回复记录</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="5" data-parent="menu-5" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="5" data-parent="default-5" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>短信库</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="31" data-sel="menu-5" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="31" data-sel="default-5" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>短信库</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="9" data-parent="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="9" data-parent="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>个人设置</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="57" data-sel="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="57" data-sel="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>修改密码</span>
+                        <label class="check-box check-box-blue">
+                            <input value="53" data-sel="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="53" data-sel="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>Logo自定义</span>
+                        <label class="check-box check-box-blue">
+                            <input value="55" data-sel="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="55" data-sel="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>回复自动转发</span>
+                        <label class="check-box check-box-blue">
+                            <input value="54" data-sel="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="54" data-sel="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>安全设置</span>
+                        <label class="check-box check-box-blue">
+                            <input value="56" data-sel="menu-9" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="56" data-sel="default-9" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>修改联系方式</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="16" data-parent="menu-16" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="16" data-parent="default-16" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>账户信息</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="100" data-sel="menu-16" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="100" data-sel="default-16" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>消费记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="101" data-sel="menu-16" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="101" data-sel="default-16" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>余额查询</span>
+                        <label class="check-box check-box-blue">
+                            <input value="99" data-sel="menu-16" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="99" data-sel="default-16" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>安全设置</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="11" data-parent="menu-11" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="11" data-parent="default-11" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="60" data-sel="menu-11" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="60" data-sel="default-11" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="12" data-parent="menu-12" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="12" data-parent="default-12" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通讯录</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="61" data-sel="menu-12" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="61" data-sel="default-12" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>回收站</span>
+                        <label class="check-box check-box-blue">
+                            <input value="62" data-sel="menu-12" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="62" data-sel="default-12" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>联系人管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="63" data-sel="menu-12" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="63" data-sel="default-12" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>联系组管理(新)</span>
+                        <label class="check-box check-box-blue">
+                            <input value="64" data-sel="menu-12" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="64" data-sel="default-12" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通讯组管理</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="10" data-parent="menu-10" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="10" data-parent="default-10" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>黑名单管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="58" data-sel="menu-10" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="58" data-sel="default-10" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>黑名单管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="59" data-sel="menu-10" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="59" data-sel="default-10" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>添加黑名单</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="17" data-parent="menu-17" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="17" data-parent="default-17" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>子账户管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="102" data-sel="menu-17" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="102" data-sel="default-17" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>子账户管理</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="2" data-parent="menu-2" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="2" data-parent="default-2" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>白名单管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="24" data-sel="menu-2" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="24" data-sel="default-2" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>白名单管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="25" data-sel="menu-2" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="25" data-sel="default-2" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>添加白名单</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="13" data-parent="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="13" data-parent="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>系统设置</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="71" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="71" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>接口通道</span>
+                        <label class="check-box check-box-blue">
+                            <input value="82" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="82" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通道设置（新）</span>
+                        <label class="check-box check-box-blue">
+                            <input value="107" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="107" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>备忘录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="66" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="66" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>充值审核</span>
+                        <label class="check-box check-box-blue">
+                            <input value="74" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="74" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>批量审核</span>
+                        <label class="check-box check-box-blue">
+                            <input value="78" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="78" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核语音号码</span>
+                        <label class="check-box check-box-blue">
+                            <input value="81" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="81" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通道设置</span>
+                        <label class="check-box check-box-blue">
+                            <input value="84" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="84" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户IP绑定</span>
+                        <label class="check-box check-box-blue">
+                            <input value="75" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="75" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>日志</span>
+                        <label class="check-box check-box-blue">
+                            <input value="86" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="86" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="76" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="76" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核</span>
+                        <label class="check-box check-box-blue">
+                            <input value="68" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="68" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送监控</span>
+                        <label class="check-box check-box-blue">
+                            <input value="80" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="80" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>数据统计</span>
+                        <label class="check-box check-box-blue">
+                            <input value="83" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="83" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>系统关键字</span>
+                        <label class="check-box check-box-blue">
+                            <input value="70" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="70" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>黑名单管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="69" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="69" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>公告管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="65" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="65" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>常用设置</span>
+                        <label class="check-box check-box-blue">
+                            <input value="88" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="88" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>月报表</span>
+                        <label class="check-box check-box-blue">
+                            <input value="72" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="72" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>每日对账单</span>
+                        <label class="check-box check-box-blue">
+                            <input value="87" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="87" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户账户记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="85" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="85" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户安全设置管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="77" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="77" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核记录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="67" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="67" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送报告</span>
+                        <label class="check-box check-box-blue">
+                            <input value="73" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="73" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>默认选中菜单设置</span>
+                        <label class="check-box check-box-blue">
+                            <input value="79" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="79" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>审核语音文件</span>
+                        <label class="check-box check-box-blue">
+                            <input value="103" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="103" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>菜单管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="104" data-sel="menu-13" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="104" data-sel="default-13" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>角色管理</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="14" data-parent="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="14" data-parent="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户管理</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="89" data-sel="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="89" data-sel="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户管理</span>
+                        <label class="check-box check-box-blue">
+                            <input value="90" data-sel="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="90" data-sel="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户管理(无充值)</span>
+                        <label class="check-box check-box-blue">
+                            <input value="105" data-sel="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="105" data-sel="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>用户管理（新）</span>
+                        <label class="check-box check-box-blue">
+                            <input value="106" data-sel="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="106" data-sel="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>客户备忘录</span>
+                        <label class="check-box check-box-blue">
+                            <input value="91" data-sel="menu-14" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="91" data-sel="default-14" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>账户充值</span>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <h2>
+                        <label class="check-box check-box-blue">
+                            <input value="8" data-parent="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="8" data-parent="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送数量</span>
+                    </h2>
+                    <div>
+                        <label class="check-box check-box-blue">
+                            <input value="49" data-sel="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="49" data-sel="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>发送数量</span>
+                        <label class="check-box check-box-blue">
+                            <input value="51" data-sel="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="51" data-sel="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通道查询</span>
+                        <label class="check-box check-box-blue">
+                            <input value="52" data-sel="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="52" data-sel="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>通道查询(新)</span>
+                        <label class="check-box check-box-blue">
+                            <input value="50" data-sel="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="50" data-sel="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>历史数据查询</span>
+                        <label class="check-box check-box-blue">
+                            <input value="48" data-sel="menu-8" name="menuId" type="checkbox">
+                        </label>
+                        <label class="check-box check-box-red">
+                            <input value="48" data-sel="default-8" name="defaultMenu" type="checkbox">
+                        </label>
+                        <span>报表统计</span>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+        <div class="gs-fixed" style="top:20px;right:20px;">
+            <div class="gs-form-row">
+                <div class="gs-form-control">
+                    <a id="addRole" href="#" class="gs-button">新增</a>
+                    <a id="clearForm" href="#" class="gs-button">清空</a>
+                </div>
+            </div>
+            <div id="roleOption" class="gs-form-row" style="display: none;">
+                <div class="gs-form-control">
+                    <a id="modRole" href="#" class="gs-button">修改</a>
+                    <a id="delRole" href="#" class="gs-button gs-button-danger">删除</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+</div>
+<script data-main="scripts/rolelist" src="scripts/require.js?v5.0"></script>
+</body>
+</html>
